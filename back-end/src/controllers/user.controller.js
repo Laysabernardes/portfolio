@@ -2,9 +2,9 @@ import userService from "../services/user.service.js";
     
 const create = async (req, res) => {
     try {
-        const { name, username, email, password} = req.body;
+        const { name, email, password} = req.body;
 
-        if (!name || !username || !email || !password) {
+        if (!name || !email || !password) {
             res.status(400).send({ message: "Preencha todos os campos para o registro." });
         }
 
@@ -20,7 +20,6 @@ const create = async (req, res) => {
                 
                 id: user._id,
                 name,
-                username,
                 email,
             }
         });
@@ -54,9 +53,9 @@ const findById = async (req, res) => {
 
 const update = async (req, res) => {
     try {
-        const { name, username, email, password} = req.body;
+        const { name, email, password} = req.body;
 
-        if (!name && !username && !email && !password) {
+        if (!name && !email && !password) {
             res.status(400).send({ message: "Envie pelo menos um campo para a atualização." });
         };
 
@@ -65,7 +64,6 @@ const update = async (req, res) => {
         await userService.updateService(
             id,
             name,
-            username,
             email,
             password,
         );
