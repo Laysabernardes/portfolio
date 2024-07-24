@@ -1,0 +1,12 @@
+INFORMAÇÕES PARA ME AUXILIAR NO DESENVOLVIMENTO
+
+#Padronização dos Commits
+    - feat: Adição de uma nova funcionalidade.
+    - fix: Correção de um bug.
+    - docs: Mudanças na documentação.
+    - style: Alterações de formatação que não afetam o código.
+    - refactor: Mudança no código que não corrige um bug nem adiciona uma funcionalidade.
+    - test: Adicionando testes que faltam ou corrigindo testes existentes.
+    - chore: Atualização de tarefas de build, configuração, etc.
+
+    Exemplo: git commit -m `feat(user): add login functionality`
