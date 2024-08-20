@@ -21,6 +21,10 @@ const ProjectsSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    value:{
+        type: String,
+        require: true
+    },
     user:{
         tyoe:mongoose.Schema.Types.ObjectId,
         ref: "User",
