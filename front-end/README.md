@@ -6,7 +6,7 @@ Este repositório contém o código do front-end do meu portfólio, desenvolvido
 
 O design da interface foi elaborado no Figma. Você pode visualizar o layout e a estrutura do projeto clicando no link abaixo:
 
-[![Figma Design](https://img.shields.io/badge/Figma-Design-orange?style=for-the-badge&logo=figma)](https://www.figma.com/design/eZSWl1162WYf4Eoc2PHlMU/Portfolio?node-id=0-1&t=b7n99sTGxgCn86uV-1)
+[![Figma Design](https://img.shields.io/badge/Figma-Design-purple?style=for-the-badge&logo=figma)](https://www.figma.com/design/eZSWl1162WYf4Eoc2PHlMU/Portfolio?node-id=0-1&t=b7n99sTGxgCn86uV-1)
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -16,11 +16,8 @@ O design da interface foi elaborado no Figma. Você pode visualizar o layout e a
 - **Styled-Components**: Para aplicar estilos CSS nos componentes.
 - **Framer Motion**: Animações no React.
 
-
-
-
-
-
+#
+#
 
 # Getting Started with Create React App
 
