@@ -2,10 +2,10 @@ import userService from "../services/user.service.js";
     
 const create = async (req, res) => {
     try {
-        const { name, email, password} = req.body;
+        const { username, email, password} = req.body;
 
-        if (!name || !email || !password) {
-            res.status(400).send({ message: "Preencha todos os campos para o registro." });
+        if (!username || !email || !password) {
+            return res.status(400).send({ message: "Preencha todos os campos para o registro." });
         }
 
         const user = await userService.createService(req.body);
@@ -19,14 +19,14 @@ const create = async (req, res) => {
             user: {
                 
                 id: user._id,
-                name,
+                username,
                 email,
             }
         });
     } catch (err) {
-        res.status(500).send({ message: err.mensage })
+        return res.status(500).send({ message: err.message })
     }
-}
+};
 
 const findAll = async (req, res) => {
     try {
@@ -41,21 +41,11 @@ const findAll = async (req, res) => {
     }
 };
 
-const findById = async (req, res) => {
-
-    try {
-        const user = req.user
-        res.send(user);
-    } catch (err) {
-        res.status(500).send({ message: err.mensage })
-    }
-}
-
 const update = async (req, res) => {
     try {
-        const { name, email, password} = req.body;
+        const { username, email, password} = req.body;
 
-        if (!name && !email && !password) {
+        if (!username && !email && !password) {
             res.status(400).send({ message: "Envie pelo menos um campo para a atualização." });
         };
 
@@ -63,7 +53,7 @@ const update = async (req, res) => {
 
         await userService.updateService(
             id,
-            name,
+            username,
             email,
             password,
         );
@@ -74,4 +64,4 @@ const update = async (req, res) => {
     }
 };
 
-export default { create, findAll, findById, update };
+export default { create, findAll, update };
