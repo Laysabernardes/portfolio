@@ -1,15 +1,7 @@
 import mongoose from "mongoose";
 
 const ProjectsSchema = new mongoose.Schema({
-    wallpaper:{
-        type: String,
-        require: true
-    },
     title:{
-        type: String,
-        require: true
-    },
-    movie:{
         type: String,
         require: true
     },
@@ -17,19 +9,27 @@ const ProjectsSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    tech:{
+    tecnologies:{
         type: String,
         require: true
     },
-    linkGitHub:{
+    repositoryURL:{
         type: String,
         require: true
     },
-    linkDeploy:{
+    demoURL:{
         type: String,
         require: true
     },
     value:{
+        type: String,
+        require: true
+    },
+    image:{
+        type: String,
+        require: true
+    },
+    category:{
         type: String,
         require: true
     },
