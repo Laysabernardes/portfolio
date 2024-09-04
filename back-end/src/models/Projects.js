@@ -1,15 +1,23 @@
 import mongoose from "mongoose";
 
 const ProjectsSchema = new mongoose.Schema({
+    wallpaper:{
+        type: String,
+        require: true
+    },
     title:{
         type: String,
         require: true
     },
-    image:{
+    movie:{
         type: String,
         require: true
     },
     description:{
+        type: String,
+        require: true
+    },
+    tech:{
         type: String,
         require: true
     },
