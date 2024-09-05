@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 const ProjectsSchema = new mongoose.Schema({
     title:{
         type: String,
+        unique: true,
+        lowercase: true,
         require: true
     },
     description:{
