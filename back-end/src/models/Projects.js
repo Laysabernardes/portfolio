@@ -35,6 +35,7 @@ const ProjectsSchema = new mongoose.Schema({
     },
     category:{
         type: String,
+        lowercase: true,
         require: true
     }
 });
