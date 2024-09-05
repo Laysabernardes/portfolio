@@ -43,14 +43,13 @@ export const create = async (req, res) => {
 export const findAll = async (req, res) => {
     try {
 
-        const projects = await userService.findAllService();
+        const projects = await findAllService();
 
         if (projects.length === 0) {
-            return res.status(400).send({ message: "Não há usuários registrados." });
+            return res.status(400).send({ message: "Não há projetos registrados." });
         }
-        // Envia a lista de usuários como resposta.
-        res.send(users);
+        res.send(projects);
     } catch (err) {
-        res.status(500).send({ message: err.mensage })
+        res.status(500).send({ message: err.message })
     }
 };
