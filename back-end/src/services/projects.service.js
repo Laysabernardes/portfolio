@@ -1,15 +1,17 @@
 import Projects from "../models/Projects.js";
 
-const createService = (body) => Projects.create(body);
-const findAllService = () => Projects.find();
-const findByIdService = (id) => Projects.findById(id);
-const updateService = (title, description, tecnologies, repositoryURL, demoURL, value,image,category) => {
+export const createService = (body) => Projects.create(body);
+export const findAllService = () => Projects.find();
+export const findByName = (title) => {return Projects.find({title: title})}
+export const findByCategory = (category) => {return Projects.find({category: category})};
+export const deleteService = (id) => {return Projects.findOneAndDelete({_id: id})};
+export const updateService = (id, title, description, technologies, repositoryURL, demoURL, value,image,category) => {
     return Projects.findOneAndUpdate(
       { _id: id }, 
       {           
         title, 
         description, 
-        tecnologies, 
+        technologies, 
         repositoryURL, 
         demoURL, 
         value,
@@ -18,10 +20,3 @@ const updateService = (title, description, tecnologies, repositoryURL, demoURL, 
       }
     );
   };
-
-export default {
-    createService,
-    findAllService,
-    findByIdService,
-    updateService
-};

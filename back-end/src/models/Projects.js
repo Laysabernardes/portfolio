@@ -9,10 +9,12 @@ const ProjectsSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    tecnologies:{
-        type: String,
+    // Campo technologies como um array de ObjectId
+    technologies:[{
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Technologies',
         require: true
-    },
+    }],
     repositoryURL:{
         type: String,
         require: true
@@ -22,7 +24,7 @@ const ProjectsSchema = new mongoose.Schema({
         require: true
     },
     value:{
-        type: String,
+        type: Number,
         require: true
     },
     image:{
@@ -32,12 +34,7 @@ const ProjectsSchema = new mongoose.Schema({
     category:{
         type: String,
         require: true
-    },
-    user:{
-        tyoe:mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        require:true
-    },
+    }
 });
 
 const Projects = mongoose.model("Projects", ProjectsSchema);

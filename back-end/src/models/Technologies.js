@@ -21,6 +21,6 @@ const TechnologiesSchema = new mongoose.Schema({
     }
 });
 
-const Technologies = mongoose.model("Tecnologies", TechnologiesSchema);
+const Technologies = mongoose.model("Technologies", TechnologiesSchema);
 
 export default Technologies;

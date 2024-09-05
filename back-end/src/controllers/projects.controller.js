@@ -1,37 +1,46 @@
-const create = async (req, res) => {
-    try {
-        const { wallpaper, title, movie, description, tech, linkgithub, linkdeploy, value} = req.body;
+import Projects from "../models/Projects.js";
+import {createService, findAllService, findByName, findByCategory, deleteService, updateService} from "../services/projects.service.js";
 
-        if (!wallpaper || !title || !movie || !description || !tech || !linkgithub || !linkdeploy || !value) {
+export const create = async (req, res) => {
+    try {
+        const { title, description, technologies, repositoryURL, demoURL, value,image,category} = req.body;
+
+        if ( !title || !description || !technologies || !repositoryURL || !demoURL || !value || !image|| !category) {
             res.status(400).send({
                 message: "Adicione todos os elementos!"
             });
         }
 
         const project = await createService({
-            wallpaper, 
             title, 
-            movie, 
             description, 
-            tech, 
-            linkgithub, 
-            linkdeploy, 
+            technologies, 
+            repositoryURL, 
+            demoURL, 
             value,
-            user: req.userId,
+            image,
+            category,
         });
 
         if (!project) {
             return res.status(400).send({ message: "Erro ao criar o projeto." });
         }
 
-        res.status(201).send();
+        // Popula as tecnologias associadas e retorna o projeto com as tecnologias completas
+        const populatedProject = await Projects.findById(project._id).populate('technologies').exec();
+        
+        // Retorna o projeto recém-criado como resposta
+        res.status(201).send({
+            message: "Projeto criado com sucesso!",
+            project: populatedProject
+        });
 
     } catch (err) {
-        res.status(500).send({ message: err.mensage })
+        res.status(500).send({ message: err.message })
     }
 }
 
-const findAll = async (req, res) => {
+export const findAll = async (req, res) => {
     try {
 
         const projects = await userService.findAllService();
@@ -45,5 +54,3 @@ const findAll = async (req, res) => {
         res.status(500).send({ message: err.mensage })
     }
 };
-
-    export default { create, findAll };
