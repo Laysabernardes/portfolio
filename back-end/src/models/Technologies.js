@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const TecnologiesSchema = new mongoose.Schema({
+const TechnologiesSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: true,
@@ -21,6 +21,6 @@ const TecnologiesSchema = new mongoose.Schema({
     }
 });
 
-const Tecnologies = mongoose.model("Tecnologies", TecnologiesSchema);
+const Technologies = mongoose.model("Tecnologies", TechnologiesSchema);
 
-export default Tecnologies;
+export default Technologies;
