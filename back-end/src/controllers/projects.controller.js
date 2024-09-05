@@ -1,5 +1,6 @@
+import { title } from "process";
 import Projects from "../models/Projects.js";
-import {createService, findAllService, findByName, findByCategory, deleteService, updateService} from "../services/projects.service.js";
+import {createService, findAllService, findByCategory, deleteService, updateService} from "../services/projects.service.js";
 
 export const create = async (req, res) => {
     try {
@@ -49,6 +50,19 @@ export const findAll = async (req, res) => {
             return res.status(400).send({ message: "Não há projetos registrados." });
         }
         res.send(projects);
+    } catch (err) {
+        res.status(500).send({ message: err.message })
+    }
+};
+
+export const Category = async (req, res) => {
+    try {
+        const {category} = req.params;
+        const projects = await findByCategory(category);
+        if (!projects || projects.length === 0) {
+            return res.status(404).send({ message: "Projeto não encontrado" });
+        }
+        return res.status(200).send(projects);
     } catch (err) {
         res.status(500).send({ message: err.message })
     }
