@@ -96,3 +96,17 @@ export const updateProjects = async (req, res) => {
         res.status(500).send({ message: err.message })
     }
 };
+
+export const deleteProjects = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const deletedProjects = await deleteService(id);
+        if (!deletedProjects) {
+            return res.status(404).send({ message: "Projeto não encontrado." });
+        }
+
+        return res.send({ message: "Projeto deletado com sucesso" });
+    } catch (err) {
+        res.status(500).send({ message: err.message });
+    }
+};
