@@ -67,3 +67,32 @@ export const Category = async (req, res) => {
         res.status(500).send({ message: err.message })
     }
 };
+
+export const updateProjects = async (req, res) => {
+    try {
+        const { title, description, technologies, repositoryURL, demoURL, value, image, category} = req.body;
+
+        if (!title && !description && !technologies && !repositoryURL && !demoURL && !value && !image && !category) {
+            res.status(400).send({ message: "Envie pelo menos um campo para a atualização." });
+        };
+
+        const updatedProjects = await updateService(
+            req.params.id,
+            title, 
+            description, 
+            technologies, 
+            repositoryURL, 
+            demoURL, 
+            value, 
+            image, 
+            category,
+        );
+
+        if (!updatedProjects) {
+            return res.status(404).send({ message: "Projeto não encontrada para atualização.", updatedProjects });
+        };
+        res.send({ message: "Projeto foi atualizado com sucesso!", updatedProjects });
+    } catch (err) {
+        res.status(500).send({ message: err.message })
+    }
+};
