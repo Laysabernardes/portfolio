@@ -1,6 +1,6 @@
-import technologiesService from "../services/technologies.service.js";
+import {createService, findAllService, findByName, findByCategory, deleteService, updateService } from "../services/technologies.service.js"
 
-export const create = async (req, res) => {
+export const createTechnology = async (req, res) => {
     try {
         const { name, icon, nivel, category } = req.body;
 
@@ -8,7 +8,7 @@ export const create = async (req, res) => {
             return res.status(400).send({ message: "Preencha todos os campos para o registro." });
         }
 
-        const technology = await technologiesService.createService(req.body);
+        const technology = await createService(req.body);
 
         if (!technology) {
             return res.status(400).send({ message: "Erro ao criar a tec." });
@@ -29,9 +29,9 @@ export const create = async (req, res) => {
     }
 };
 
-export const findAll = async (req, res) => {
+export const findAllTechnology = async (req, res) => {
     try {
-        const technologies = await technologiesService.findAllService();
+        const technologies = await findAllService();
 
         if (technologies.length === 0) {
             return res.status(400).send({ message: "Não há tecnologias registradas." });
@@ -42,10 +42,10 @@ export const findAll = async (req, res) => {
     }
 };
 
-export const findByName = async (req, res) => {
+export const findByNameTechnology = async (req, res) => {
     try {
         const { name } = req.params;
-        const technologies = await technologiesService.findByName(name);
+        const technologies = await findByName(name);
         if (!technologies || technologies.length === 0) {
             return res.status(404).send({ message: "Tecnologia não encontrada" });
         }
@@ -55,17 +55,17 @@ export const findByName = async (req, res) => {
     }
 };
 
-export const findByCategory = async (req, res) => {
+export const findByCategoryTechnology = async (req, res) => {
     try {
         const { category } = req.params;
-        const technologies = await technologiesService.findByCategory(category);
+        const technologies = await findByCategory(category);
         return res.send(technologies);
     } catch (err) {
         res.status(500).send({ message: err.message })
     }
 };
 
-export const updateTechnologies = async (req, res) => {
+export const updateTechnology = async (req, res) => {
     try {
         const { name, icon, nivel, category } = req.body;
 
@@ -73,7 +73,7 @@ export const updateTechnologies = async (req, res) => {
             res.status(400).send({ message: "Envie pelo menos um campo para a atualização." });
         };
 
-        const updatedTechnology = await technologiesService.updateService(
+        const updatedTechnology = await updateService(
             req.params.id,
             name,
             icon,
@@ -90,10 +90,10 @@ export const updateTechnologies = async (req, res) => {
     }
 };
 
-export const deleteTechnologies = async (req, res) => {
+export const deleteTechnology = async (req, res) => {
     const { name } = req.params;
     try {
-        const deletedTechnology = await technologiesService.deleteService(name);
+        const deletedTechnology = await deleteService(name);
         if (!deletedTechnology) {
             return res.status(404).send({ message: "Tecnologia não encontrada." });
         }

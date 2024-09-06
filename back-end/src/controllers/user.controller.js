@@ -1,6 +1,6 @@
-import userService from "../services/user.service.js";
-    
-const create = async (req, res) => {
+import {createService, findAllService, updateService} from "../services/user.service.js"
+
+export const createUser = async (req, res) => {
     try {
         const { username, email, password} = req.body;
 
@@ -8,7 +8,7 @@ const create = async (req, res) => {
             return res.status(400).send({ message: "Preencha todos os campos para o registro." });
         }
 
-        const user = await userService.createService(req.body);
+        const user = await createService(req.body);
 
         if (!user) {
             return res.status(400).send({ message: "Erro ao criar o usuário." });
@@ -28,9 +28,9 @@ const create = async (req, res) => {
     }
 };
 
-const findAll = async (req, res) => {
+export const findAllUser = async (req, res) => {
     try {
-        const users = await userService.findAllService();
+        const users = await findAllService();
 
         if (users.length === 0) {
             return res.status(400).send({ message: "Não há usuários registrados." });
@@ -41,7 +41,7 @@ const findAll = async (req, res) => {
     }
 };
 
-const update = async (req, res) => {
+export const updateUser = async (req, res) => {
     try {
         const { username, email, password} = req.body;
 
@@ -51,7 +51,7 @@ const update = async (req, res) => {
 
         const { id, user } = req;
 
-        await userService.updateService(
+        await updateService(
             id,
             username,
             email,
@@ -63,5 +63,3 @@ const update = async (req, res) => {
         res.status(500).send({ message: err.mensage })
     }
 };
-
-export default { create, findAll, update };
