@@ -10,6 +10,16 @@ O back-end foi projetado para fornecer uma API RESTful que permite:
 - **CRUD de Tecnologias**: Gerenciamento das tecnologias associadas aos projetos.
 - **Gerenciamento de Seções do Portfólio**: Atualização de seções de conteúdo do portfólio de forma flexível.
 
+## 📚 Documentação da API e Deploy 
+
+A documentação da API foi criada utilizando **Swagger** e está disponível no deploy para facilitar o uso e a integração com o sistema. Para acessar a documentação e testar as rotas diretamente, utilize o seguinte link:
+
+[Documentação Swagger](https://portfolio-37lf.onrender.com/doc/)
+
+![Swagger](image.png)
+
+[Deploy do Back-End](https://portfolio-37lf.onrender.com)
+
 ## 📊 Modelagem de Dados
 
 Abaixo está a modelagem das informações utilizadas no back-end:
