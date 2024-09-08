@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Laysa Bernardes' Portfolio",
-        "description": "Laysa Bernardes' portfolio page, a web development framework composed of the MongoDB, Express.js, React.js and Nodejs.",
+        "title": "Laysa Bernardes' Portfolio Documentation",
+        "description": "This is the API documentation for Laysa Bernardes' portfolio, a web development application built using the MERN stack (MongoDB, Express.js, React.js, and Node.js). It provides functionality for creating, managing, and showcasing projects and technologies.",
         "contact": {
             "email": "laysabernardes.ads@gmail.com"
         },
@@ -10,7 +10,7 @@
     },
     "servers": [
         {
-            "url": "https://api-login-0qlo.onrender.com",
+            "url": "https://portfolio-37lf.onrender.com/",
             "description": "Render Server"
         },
         {
