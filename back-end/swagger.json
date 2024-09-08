@@ -310,7 +310,7 @@
                 }
             }
         },
-        "/tec/:{name}/": {
+        "/tec/{name}/": {
             "get": {
                 "summary": "Search Technology by name",
                 "description": "Route responsible for searching for technology by name",
@@ -347,7 +347,7 @@
                 }
             }
         },
-        "/tec/categoria/:{category}": {
+        "/tec/categoria/{category}": {
             "get": {
                 "summary": "Search Technology by category",
                 "description": "Route responsible for searching for technology by category",
@@ -388,7 +388,7 @@
                 }
             }
         },
-        "/tec/:{id}/": {
+        "/tec/{id}/": {
             "patch": {
                 "summary": "Update",
                 "description": "Route to update technology",
@@ -481,7 +481,7 @@
                 }
             }
         },
-        "/tec/:{name}": {
+        "/tec/{name}": {
             "delete": {
                 "summary": "Delete a Technology",
                 "description": "Route to delete a technology by name",
@@ -565,31 +565,39 @@
                                 "type": "object",
                                 "properties": {
                                     "title": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "Meu Projeto Exemplo"
                                     },
                                     "description": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "Descrição de exemplo para o projeto."
                                     },
                                     "technologies": {
                                         "type": "array",
                                         "items": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "example": "12345678901234567890123456"
                                         }
                                     },
                                     "repositoryURL": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "https://github.com/usuario/projeto-exemplo"
                                     },
                                     "demoURL": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "https://projeto-exemplo.com/demo"
                                     },
                                     "value": {
-                                        "type": "number"
+                                        "type": "number",
+                                        "example": 1000
                                     },
                                     "image": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "https://projeto-exemplo.com/imagem.png"
                                     },
                                     "category": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "Front-end"
                                     }
                                 },
                                 "required": [
@@ -665,7 +673,7 @@
                 }
             }
         },
-        "/proj/:{category}/": {
+        "/proj/{category}/": {
             "get": {
                 "summary": "Get projects by category",
                 "description": "Route to retrieve projects based on category",
@@ -706,7 +714,7 @@
                 }
             }
         },
-        "/proj/:{id}/": {
+        "/proj/{id}/": {
             "patch": {
                 "summary": "Update a project",
                 "description": "Route to update a project by ID",
@@ -719,7 +727,8 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "example": "ID"  
                         },
                         "description": "ID of the project to update"
                     }
@@ -731,31 +740,39 @@
                                 "type": "object",
                                 "properties": {
                                     "title": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "meu projeto perfeito5"
                                     },
                                     "description": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "Descrição detalhada do meu projeto lindo."
                                     },
                                     "technologies": {
                                         "type": "array",
                                         "items": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "example": "66d9f0a2ab09f1a4adfb4ef9"  
                                         }
                                     },
                                     "repositoryURL": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "https://github.com/usuario/meuprojeto"
                                     },
                                     "demoURL": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "https://meuprojeto.com/demo"
                                     },
                                     "value": {
-                                        "type": "number"
+                                        "type": "number",
+                                        "example": 1500
                                     },
                                     "image": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "https://meuprojeto.com/imagem.png"
                                     },
                                     "category": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "example": "front-end"
                                     }
                                 }
                             }
@@ -794,7 +811,8 @@
                 }
             }
         },
-        "/proj/:{id}": {
+
+        "/proj/{id}": {
             "delete": {
                 "summary": "Delete a project",
                 "description": "Route to delete a project by ID",
@@ -870,7 +888,7 @@
                     "password"
                 ]
             },
-            "Technology": {
+            "Technologies": {
                 "type": "object",
                 "properties": {
                     "_id": {
@@ -905,7 +923,7 @@
                     "category"
                 ]
             },
-            "Project": {
+            "Projects": {
                 "type": "object",
                 "properties": {
                     "_id": {
@@ -927,7 +945,7 @@
                         "items": {
                             "type": "string",
                             "description": "ID of the related technology",
-                            "example": "64f9fa4e9b4b92001760e56f"
+                            "example": "12345678901234567890123456"
                         },
                         "description": "List of technologies used in the project"
                     },
