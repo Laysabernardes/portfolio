@@ -43,23 +43,31 @@ export const findAllUser = async (req, res) => {
 
 export const updateUser = async (req, res) => {
     try {
-        const { username, email, password} = req.body;
+        const { username, email, password } = req.body;
 
+        // Verifica se pelo menos um campo foi enviado para atualização
         if (!username && !email && !password) {
-            res.status(400).send({ message: "Envie pelo menos um campo para a atualização." });
-        };
+            return res.status(400).send({ message: "Envie pelo menos um campo para a atualização." });
+        }
 
-        const { id, user } = req;
+        // Obtém o id dos parâmetros da URL
+        const { id } = req.params;
 
-        await updateService(
-            id,
-            username,
-            email,
-            password,
-        );
+        // Cria um objeto com apenas os campos que foram enviados no body
+        const dataToUpdate = {};
+        if (username) dataToUpdate.username = username;
+        if (email) dataToUpdate.email = email;
+        if (password) dataToUpdate.password = password;
 
-        res.send({ message: "Usuario foi atualizado com sucesso!" });
+        // Chamando o serviço para atualizar o usuário
+        const updatedUser = await updateService(id, dataToUpdate);
+
+        if (!updatedUser) {
+            return res.status(404).send({ message: "Usuário não encontrado" });
+        }
+
+        res.send({ message: "Usuário foi atualizado com sucesso!", user: updatedUser });
     } catch (err) {
-        res.status(500).send({ message: err.mensage })
+        res.status(500).send({ message: err.message });
     }
 };
