@@ -1,0 +1,973 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laysa Bernardes' Portfolio",
+        "description": "Laysa Bernardes' portfolio page, a web development framework composed of the MongoDB, Express.js, React.js and Nodejs.",
+        "contact": {
+            "email": "laysabernardes.ads@gmail.com"
+        },
+        "versio": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://api-login-0qlo.onrender.com",
+            "description": "Render Server"
+        },
+        {
+            "url": "http://localhost:3001",
+            "description": "Local Server"
+        }
+    ],
+    "paths": {
+        "/user/": {
+            "post": {
+                "summary": "Create a new user",
+                "description": "Route responsible for creating a new user",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            },
+                            "examples": {
+                                "Users": {
+                                    "value": {
+                                        "username": "Laysa",
+                                        "email": "laysa@laysa.com",
+                                        "password": "123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Not Found"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schemma": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user": {
+            "get": {
+                "summary": "Search all users",
+                "description": "Route responsible for fetching all users",
+                "tags": [
+                    "User"
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Not Found"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/User"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}": {
+            "patch": {
+                "summary": "Update user",
+                "description": "Route responsible for update user",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "ID do usuário a ser atualizado"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "example": "newUsername"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "newemail@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "newPassword123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuário atualizado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Usuário foi atualizado com sucesso!"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro de validação",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Envie pelo menos um campo para a atualização."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuário não encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Usuário não encontrado."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro no servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Erro ao atualizar usuário."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth": {
+            "post": {
+                "summary": "Login",
+                "description": "Route responsible for logging in a registered user",
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            },
+                            "examples": {
+                                "User": {
+                                    "value": {
+                                        "email": "laysa@gmail.com",
+                                        "password": "12345"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Not Found"
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/tec/": {
+            "post": {
+                "summary": "Create a new Technology",
+                "description": "Route responsible for creating a new Technology",
+                "tags": [
+                    "Technologies"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Technologies"
+                            },
+                            "examples": {
+                                "Users": {
+                                    "value": {
+                                        "name": "Java",
+                                        "icon": "https://www.flaticon.com/br/icone-gratis/java_226777",
+                                        "nivel": "basic",
+                                        "category": "back-end"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Not Found"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schemma": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Technologies"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tec": {
+            "get": {
+                "summary": "Search all Technologies",
+                "description": "Route responsible for fetching all Technologies",
+                "tags": [
+                    "Technologies"
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Not Found"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Technologies"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tec/:{name}/": {
+            "get": {
+                "summary": "Search Technology by name",
+                "description": "Route responsible for searching for technology by name",
+                "tags": [
+                    "Technologies"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "type": "string",
+                        "description": "Technology name",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Not Found"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Technologies"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tec/categoria/:{category}": {
+            "get": {
+                "summary": "Search Technology by category",
+                "description": "Route responsible for searching for technology by category",
+                "tags": [
+                    "Technologies"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "category",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Technology category"
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Not Found"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Technologies"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tec/:{id}/": {
+            "patch": {
+                "summary": "Update",
+                "description": "Route to update technology",
+                "tags": [
+                    "Technologies"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "icon": {
+                                        "type": "string"
+                                    },
+                                    "nivel": {
+                                        "type": "string"
+                                    },
+                                    "category": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "Update": {
+                                    "value": {
+                                        "name": "JavaScript",
+                                        "icon": "https://www.flaticon.com/br/icone-gratis/java_226777",
+                                        "nivel": "basic",
+                                        "category": "back-end"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "200": {
+                        "description": "Updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "technology": {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "icon": {
+                                                    "type": "string"
+                                                },
+                                                "nivel": {
+                                                    "type": "string"
+                                                },
+                                                "category": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "message",
+                                        "technology"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tec/:{name}": {
+            "delete": {
+                "summary": "Delete a Technology",
+                "description": "Route to delete a technology by name",
+                "tags": [
+                    "Technologies"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Name of the technology to be deleted"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Technology deleted successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Tecnologia deletada com sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Technology not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Tecnologia não encontrada."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Erro interno no servidor"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/proj/": {
+            "post": {
+                "summary": "Create a new project",
+                "description": "Route to create a new project",
+                "tags": [
+                    "Projects"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "technologies": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "repositoryURL": {
+                                        "type": "string"
+                                    },
+                                    "demoURL": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "number"
+                                    },
+                                    "image": {
+                                        "type": "string"
+                                    },
+                                    "category": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "technologies",
+                                    "repositoryURL",
+                                    "demoURL",
+                                    "value",
+                                    "image",
+                                    "category"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Project created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Projeto criado com sucesso!"
+                                        },
+                                        "project": {
+                                            "$ref": "#/components/schemas/Projects"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request: Missing required fields"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/proj": {
+            "get": {
+                "summary": "Get all projects",
+                "description": "Route to retrieve all projects",
+                "tags": [
+                    "Projects"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of projects",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Projects"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "No projects found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/proj/:{category}/": {
+            "get": {
+                "summary": "Get projects by category",
+                "description": "Route to retrieve projects based on category",
+                "tags": [
+                    "Projects"
+                ],
+                "parameters": [
+                    {
+                        "name": "category",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Category of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of projects in the specified category",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Projects"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Projects not found in this category"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/proj/:{id}/": {
+            "patch": {
+                "summary": "Update a project",
+                "description": "Route to update a project by ID",
+                "tags": [
+                    "Projects"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "ID of the project to update"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "technologies": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "repositoryURL": {
+                                        "type": "string"
+                                    },
+                                    "demoURL": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "number"
+                                    },
+                                    "image": {
+                                        "type": "string"
+                                    },
+                                    "category": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Project updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Projeto foi atualizado com sucesso!"
+                                        },
+                                        "updatedProjects": {
+                                            "$ref": "#/components/schemas/Projects"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request: No fields provided for update"
+                    },
+                    "404": {
+                        "description": "Project not found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/proj/:{id}": {
+            "delete": {
+                "summary": "Delete a project",
+                "description": "Route to delete a project by ID",
+                "tags": [
+                    "Projects"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "ID of the project to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Project deleted successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Projeto deletado com sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Project not found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "Unique identifier for the user"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Username of the user",
+                        "example": "johndoe"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email address of the user",
+                        "example": "johndoe@example.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "Hashed password for user authentication",
+                        "example": "$2a$10$E..O9SJZ8"
+                    }
+                },
+                "required": [
+                    "username",
+                    "email",
+                    "password"
+                ]
+            },
+            "Technology": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "Unique identifier for the technology"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the technology",
+                        "example": "javascript"
+                    },
+                    "icon": {
+                        "type": "string",
+                        "description": "URL of the technology icon",
+                        "example": "https://www.flaticon.com/br/icone-gratis/java_226777"
+                    },
+                    "nivel": {
+                        "type": "string",
+                        "description": "Skill level of the technology",
+                        "example": "basic"
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Category of the technology (e.g., front-end, back-end)",
+                        "example": "back-end"
+                    }
+                },
+                "required": [
+                    "name",
+                    "icon",
+                    "nivel",
+                    "category"
+                ]
+            },
+            "Project": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "Unique identifier for the project"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Title of the project",
+                        "example": "portfolio website"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the project",
+                        "example": "A personal portfolio to showcase projects."
+                    },
+                    "technologies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "description": "ID of the related technology",
+                            "example": "64f9fa4e9b4b92001760e56f"
+                        },
+                        "description": "List of technologies used in the project"
+                    },
+                    "repositoryURL": {
+                        "type": "string",
+                        "description": "URL of the project's repository",
+                        "example": "https://github.com/username/project"
+                    },
+                    "demoURL": {
+                        "type": "string",
+                        "description": "URL for the live demo of the project",
+                        "example": "https://project-demo.com"
+                    },
+                    "value": {
+                        "type": "number",
+                        "description": "Estimated value or cost of the project",
+                        "example": 5000
+                    },
+                    "image": {
+                        "type": "string",
+                        "description": "URL for the project image or screenshot",
+                        "example": "https://image-url.com/project.png"
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Category of the project (e.g., web development, mobile development)",
+                        "example": "web development"
+                    }
+                },
+                "required": [
+                    "title",
+                    "description",
+                    "technologies",
+                    "repositoryURL",
+                    "demoURL",
+                    "value",
+                    "image",
+                    "category"
+                ]
+            }
+        }
+    }
+}
