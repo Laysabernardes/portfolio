@@ -2,9 +2,9 @@ import mongoose from"mongoose";
 
 import dotenv from "dotenv";
 import jwt, { decode } from "jsonwebtoken";
-import UserServices from "../services/user.services.js";
+import User from "../services/user.services.js";
 
-const userServices = new UserServices();
+const userServices = new User();
 dotenv.config(); 
 
 export const validId = (req, res, next) => {

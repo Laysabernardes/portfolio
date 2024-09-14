@@ -1,4 +1,4 @@
-import {createService, findAllService, updateService} from "../services/user.service.js"
+import {createService, findAllService, findByIdService, updateService} from "../services/user.service.js"
 
 export const createUser = async (req, res) => {
     try {
@@ -40,6 +40,22 @@ export const findAllUser = async (req, res) => {
         res.status(500).send({ message: err.mensage })
     }
 };
+
+export const findById = async (req, res) => {     
+    try{ 
+        const id = req.params.id;
+        
+        if (!id) {
+            res.status(400).send({message: "Submit the Id field."})
+        }
+    
+        const user = await findByIdService(id);
+
+        res.status(200).send(user);
+    } catch(e) {
+        res.status(500).send({message:e.message})
+    }
+}
 
 export const updateUser = async (req, res) => {
     try {
