@@ -2,9 +2,8 @@ import mongoose from"mongoose";
 
 import dotenv from "dotenv";
 import jwt, { decode } from "jsonwebtoken";
-import User from "../services/user.services.js";
+import {findByIdService} from "../services/user.service.js";
 
-const userServices = new User();
 dotenv.config(); 
 
 export const validId = (req, res, next) => {
@@ -45,7 +44,7 @@ export const authMiddleware = (req, res, next) => {
                 return res.status(401).send({message:"Token invalid."});
             }
     
-            const user = await userServices.findById(decoded.id); 
+            const user = await findByIdService(decoded.id); 
             
             if(!user || !user.id){
                 return res.status(401).send({message:"Token invalid."});
