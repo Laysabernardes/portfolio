@@ -1,0 +1,34 @@
+/* Estiliza a barra de navegação, definindo seu layout, altura e cor de fundo */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 12vh;
+    background: var(--roxo-fundo-light);
+}
+
+.header_container{
+    display: flex;
+    align-items: center; 
+}
+
+.header_logo{
+    width: 5vh;
+}
+
+.header_titulo{
+    font-size: 3vh;
+    
+}
+
+.nav_lista{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav_link{
+    margin: 1vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size:medium;
+}
