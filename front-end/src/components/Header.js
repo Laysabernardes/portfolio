@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { logo } from "../assets/images.js";
 import "../styles/header.css";
 
+import ThemeToggleButton from "./ThemeToggleButton.js";
 
 function Navbar() {
     const navigate = useNavigate();
@@ -42,6 +43,9 @@ function Navbar() {
                     }}>CONTATO</a>
                 </li>
             </ul>
+
+            <ThemeToggleButton />
+
         </nav>
     )
 }
