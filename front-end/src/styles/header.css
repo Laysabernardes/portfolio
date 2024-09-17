@@ -1,34 +1,146 @@
-/* Estiliza a barra de navegação, definindo seu layout, altura e cor de fundo */
+/* Estilos gerais */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita rolagem horizontal desnecessária */
+}
+
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 12vh;
-    background: var(--roxo-fundo-light);
+    background: var(--nav-fundo-light);
 }
 
-.header_container{
+.header_container {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
-.header_logo{
+.header_logo {
     width: 5vh;
+    margin-top:1vh;
 }
 
-.header_titulo{
-    font-size: 3vh;
-    
+.header_titulo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Asul', sans-serif;
+    margin-left:2vh;
 }
 
-.nav_lista{
+.nav_lista {
     list-style: none;
     display: flex;
     align-items: center;
 }
 
-.nav_link{
-    margin: 1vh;
+.nav_link {
+    margin: 0.2vh;
     font-family: 'Montserrat', sans-serif;
-    font-size:medium;
+    font-size: 1.2rem;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.nav_toggler {
+    display: none;
+}
+
+.nav_toggler div {
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background: var(--nav-destaque-light);
+    transition: 0.3s ease-in;
+}
+
+/* Breakpoint para telas menores que 768px (tablets e smartphones maiores) */
+@media screen and (max-width: 768px) {
+    .nav_toggler {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav_menu {
+        flex-direction: column;
+        position: fixed; /* Garantir que o menu seja fixo */
+        top: 8vh;        /* Ajuste para ficar abaixo do header */
+        right: 0;
+        width: 40vw;
+        background: aliceblue;
+        transform: translateX(100%); /* Fora da tela inicialmente */
+        height: 100vh;  /* Ocupa a tela toda sem criar espaço extra */
+        overflow: hidden; /* Evita que o conteúdo crie barras de rolagem */
+        z-index: 100;    /* Aparecer sobre o conteúdo */
+        background: var(--nav-menu-light);
+    }
+
+    .nav_menu.nav_active {
+        margin-top: 4vh;
+        transform: translateX(0); /* Traz o menu para a tela */
+    }
+}
+
+/* Breakpoint para telas intermediárias (até 1024px) */
+@media screen and (max-width: 1024px) {
+    .nav_menu {
+        width: 50vw; /* Ajuste a largura do menu para ocupar menos espaço em telas intermediárias */
+    }
+}
+
+/* Breakpoint para smartphones maiores (até 600px) */
+@media screen and (max-width: 600px) {
+    .header_titulo {
+        font-size: 2rem; /* Reduzir tamanho da fonte para dispositivos menores */
+    }
+
+    .nav_menu {
+        width: 60vw; /* O menu ocupará um pouco mais de espaço em smartphones */
+    }
+
+    .nav_link {
+        font-size: small; /* Diminuir o tamanho do texto dos links no menu */
+    }
+}
+
+/* Breakpoint para smartphones pequenos (até 480px) */
+@media screen and (max-width: 480px) {
+    .header_logo {
+        width: 4vh; /* Ajustar o logo para telas muito pequenas */
+    }
+
+    .header_titulo {
+        font-size: 2vh; /* Diminuir ainda mais o tamanho do título */
+    }
+
+    .nav_menu {
+        width: 80vw; /* O menu ocupa a maior parte da tela */
+    }
+
+    .nav_link {
+        margin: 0.5vh; /* Reduzir a margem entre os links */
+    }
+
+    .nav_toggler div {
+        width: 2rem; /* Ajustar o tamanho do ícone do menu hamburguer */
+    }
+}
+
+/* Estiliza as linhas do botão de alternância quando a classe 'toggle' está presente */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-4px, -5px);
 }

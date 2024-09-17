@@ -25,9 +25,7 @@ function ThemeToggleButton() {
             <input type="checkbox" id="darkmode-toggle" />
             <label htmlFor="darkmode-toggle">
                 <img src={sun} alt= "Sun icon" className="sun"/>
-                
                 <img src={moon} alt="Moon Icon" className="moon" />
-      
             </label>
             <div className="background"></div>
         </div>
