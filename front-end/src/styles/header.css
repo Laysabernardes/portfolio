@@ -13,6 +13,11 @@ body {
     justify-content: space-around;
     height: 12vh;
     background: var(--background-color);
+    
+    
+    width: 100%; /* Ocupa toda a largura da tela */
+    z-index: 1000; /* Garante que fique acima de outros conteúdos */
+    
 }
 
 .header_container {
@@ -73,6 +78,14 @@ body {
 
 /* Breakpoint para telas menores que 768px (tablets e smartphones maiores) */
 @media screen and (max-width: 768px) {
+    .nav {
+        position: fixed; /* Torna a barra de navegação fixa apenas em telas pequenas */
+        top: 0; /* Fixa no topo da página */
+    }
+
+    body {
+        padding-top: 12vh; /* Ajuste este valor para a altura da sua barra de navegação */
+    }
     .nav_toggler {
         display: block;
         cursor: pointer;
