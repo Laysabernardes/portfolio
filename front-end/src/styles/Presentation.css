@@ -53,7 +53,6 @@
     align-items: center;
 }
 
-/* Ajuste as larguras das seções conforme necessário */
 .info {
     flex: 2;
     /* Ocupa 2/3 do espaço */
@@ -67,7 +66,7 @@
     font-style: italic;
     line-height: 1.0;
     letter-spacing: 2px;
-    margin: 30px 0 30px 0;
+    margin: 5%;
     color: var(--fonte-presentation);
 }
 
@@ -75,8 +74,10 @@
     font-weight: 500;
     font-size: 3.5rem;
     background: var(--destaque-fonte-presentation);
-    background-clip: text; /* Propriedade padrão */
-    -webkit-background-clip: text; /* Para navegadores WebKit */
+    background-clip: text;
+    /* Propriedade padrão */
+    -webkit-background-clip: text;
+    /* Para navegadores WebKit */
     color: transparent;
 }
 
@@ -84,37 +85,53 @@
     font-family: 'Montserrat', 'Segoe UI', 'Roboto';
     font-size: 1rem;
     line-height: 1.3;
-    margin-bottom: 20px;
-    margin-right: 20%;
+    margin: 20px 20% 20px 5%;
     color: var(--fonte-presentation);
 }
 
 .links {
     display: flex;
-    gap: 5%; /* Espaço entre os itens, ajuste conforme necessário */
-    align-items: center; /* Alinha os itens verticalmente */
+    gap: 5%;
+    /* Espaço entre os itens, ajuste conforme necessário */
+    align-items: center;
+    /* Alinha os itens verticalmente */
+    margin-left: 5%;
 }
 
 .links ul {
-    display: flex; /* Para exibir os itens da lista em linha */
-    padding: 0; /* Remove o padding padrão */
-    margin: 0; /* Remove a margem padrão */
-    list-style: none; /* Remove as bolinhas da lista */
+    display: flex;
+    /* Para exibir os itens da lista em linha */
+    padding: 0;
+    /* Remove o padding padrão */
+    margin: 0;
+    /* Remove a margem padrão */
+    list-style: none;
+    /* Remove as bolinhas da lista */
 }
-.rede-social{
-    margin:5% 5% 5% 0%;
+
+.rede-social {
+    margin: 5% 5% 5% 0;
 }
-.botao{
+
+.botao {
     border-radius: 15px;
-    padding: 20px 50px; /* Ajuste o padding conforme necessário */
+    padding: 20px 50px;
+    /* Ajuste o padding conforme necessário */
     background: linear-gradient(120deg, #AF8ADE, #601EB5);
-    color: white; /* Cor do texto do botão */
-    border: none; /* Remove borda padrão */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    display: flex; /* Para que ele se comporte como um item flexível */
-    align-items: center; /* Alinha o conteúdo dentro do botão */
-    justify-content: center; /* Centraliza o texto do botão */
-    white-space: nowrap; /* Impede que o texto quebre em múltiplas linhas */
+    color: white;
+    /* Cor do texto do botão */
+    border: none;
+    /* Remove borda padrão */
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+    display: flex;
+    /* Para que ele se comporte como um item flexível */
+    align-items: center;
+    /* Alinha o conteúdo dentro do botão */
+    justify-content: center;
+    /* Centraliza o texto do botão */
+    white-space: nowrap;
+    /* Impede que o texto quebre em múltiplas linhas */
 }
 
 .profile {
@@ -129,7 +146,7 @@
 
 .profile-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     /* Define a largura máxima da imagem */
     height: auto;
     border-radius: 50%;
@@ -145,4 +162,119 @@
     /* Define a espessura e a cor do contorno */
     margin-top: -30%;
     text-align: center;
+}
+
+/* Media Query para telas menores */
+@media screen and (max-width: 1024px) {
+    .titulo-presentation {
+        font-size: 2.5rem;
+        /* Reduz o tamanho da fonte */
+    }
+
+    .destaque-titulo {
+        font-size: 3rem;
+        /* Reduz o tamanho da fonte */
+        letter-spacing: 3px;
+    }
+
+    .text-presentation {
+        font-size: 0.9rem;
+        /* Reduz o tamanho da fonte */
+    }
+
+    .botao {
+        padding: 15px 30px;
+        /* Ajusta o padding do botão */
+        display: block;
+        width: 100%;
+        /* Opcional: ocupa 100% da largura do contêiner */
+        margin-top: 10px;
+        /* Espaçamento acima do botão */
+    }
+
+    .profile-image {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .titulo-presentation {
+        font-size: 2.5rem;
+        /* Reduz o tamanho da fonte */
+        text-align: right;
+        margin-right: 5%;
+    }
+
+    .destaque-titulo {
+        font-size: 3rem;
+        /* Reduz o tamanho da fonte */
+        text-align: right;
+        letter-spacing: 3px;
+    }
+
+    .text-presentation {
+        font-size: 0.9rem;
+        /* Reduz o tamanho da fonte */
+        text-align: center;
+        margin: 5%;
+    }
+
+    .info-profile-container {
+        flex-direction: column;
+        /* Alinha as seções em coluna */
+        align-items: center;
+        /* Centraliza os itens */
+    }
+
+    .info {
+        padding-right: 0;
+        /* Remove o padding */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .links {
+        flex-direction: column;
+        /* Alinha os links em coluna */
+        gap: 10px;
+        /* Ajusta o espaço entre os itens */
+        margin: 0%;
+        /* Remove margens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .titulo-presentation {
+        font-size: 2rem;
+        /* Reduz ainda mais */
+    }
+
+    .destaque-titulo {
+        font-size: 2.5rem;
+        /* Reduz ainda mais */
+    }
+
+    .text-presentation {
+        font-size: 0.8rem;
+        /* Reduz ainda mais */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titulo-presentation {
+        font-size: 1.5rem;
+        /* Fontes muito pequenas */
+    }
+
+    .destaque-titulo {
+        font-size: 2rem;
+        /* Fontes muito pequenas */
+    }
+
+    .botao {
+        width: 100%;
+        /* Botão ocupa toda a largura */
+        padding: 12px;
+        /* Ajuste o padding do botão */
+    }
 }
