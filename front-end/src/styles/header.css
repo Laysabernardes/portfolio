@@ -1,8 +1,10 @@
 /* Estilos gerais */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita rolagem horizontal desnecessária */
+    overflow-x: hidden;
+    /* Evita rolagem horizontal desnecessária */
 }
 
 .nav {
@@ -20,14 +22,14 @@ html, body {
 
 .header_logo {
     width: 5vh;
-    margin-top:1vh;
+    margin-top: 1vh;
 }
 
 .header_titulo {
     font-size: 1.5rem;
     font-weight: 400;
     font-family: 'Asul', sans-serif;
-    margin-left:2vh;
+    margin-left: 2vh;
 }
 
 .nav_lista {
@@ -40,6 +42,12 @@ html, body {
     margin: 0.2vh;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
+}
+
+.nav_link:hover {
+    font-weight: 400;
+    color: var(--nav-barra-light);
+    border-bottom: 2px solid black;
 }
 
 .nav_menu {
@@ -69,66 +77,84 @@ html, body {
 
     .nav_menu {
         flex-direction: column;
-        position: fixed; /* Garantir que o menu seja fixo */
-        top: 8vh;        /* Ajuste para ficar abaixo do header */
+        position: fixed;
+        /* Garantir que o menu seja fixo */
+        top: 8vh;
+        /* Ajuste para ficar abaixo do header */
         right: 0;
         width: 40vw;
         background: aliceblue;
-        transform: translateX(100%); /* Fora da tela inicialmente */
-        height: 100vh;  /* Ocupa a tela toda sem criar espaço extra */
-        overflow: hidden; /* Evita que o conteúdo crie barras de rolagem */
-        z-index: 100;    /* Aparecer sobre o conteúdo */
+        transform: translateX(100%);
+        /* Fora da tela inicialmente */
+        height: 100vh;
+        /* Ocupa a tela toda sem criar espaço extra */
+        overflow: hidden;
+        /* Evita que o conteúdo crie barras de rolagem */
+        z-index: 100;
+        /* Aparecer sobre o conteúdo */
         background: var(--nav-menu-light);
     }
 
     .nav_menu.nav_active {
         margin-top: 4vh;
-        transform: translateX(0); /* Traz o menu para a tela */
+        transform: translateX(0);
+        padding-top: 5vh;
+        /* Traz o menu para a tela */
     }
 }
 
 /* Breakpoint para telas intermediárias (até 1024px) */
 @media screen and (max-width: 1024px) {
     .nav_menu {
-        width: 50vw; /* Ajuste a largura do menu para ocupar menos espaço em telas intermediárias */
+        width: 50vw;
+        /* Ajuste a largura do menu para ocupar menos espaço em telas intermediárias */
     }
 }
 
 /* Breakpoint para smartphones maiores (até 600px) */
 @media screen and (max-width: 600px) {
     .header_titulo {
-        font-size: 2rem; /* Reduzir tamanho da fonte para dispositivos menores */
+        font-size: 2rem;
+        /* Reduzir tamanho da fonte para dispositivos menores */
     }
 
     .nav_menu {
-        width: 60vw; /* O menu ocupará um pouco mais de espaço em smartphones */
+        width: 60vw;
+        /* O menu ocupará um pouco mais de espaço em smartphones */
     }
 
     .nav_link {
-        font-size: small; /* Diminuir o tamanho do texto dos links no menu */
+        font-size: small;
+        /* Diminuir o tamanho do texto dos links no menu */
     }
 }
 
 /* Breakpoint para smartphones pequenos (até 480px) */
 @media screen and (max-width: 480px) {
     .header_logo {
-        width: 4vh; /* Ajustar o logo para telas muito pequenas */
+        width: 4vh;
+        /* Ajustar o logo para telas muito pequenas */
     }
 
     .header_titulo {
-        font-size: 2vh; /* Diminuir ainda mais o tamanho do título */
+        font-size: 2vh;
+        /* Diminuir ainda mais o tamanho do título */
     }
 
     .nav_menu {
-        width: 80vw; /* O menu ocupa a maior parte da tela */
+        width: 80vw;
+        /* O menu ocupa a maior parte da tela */
     }
 
     .nav_link {
-        margin: 0.5vh; /* Reduzir a margem entre os links */
+        margin: 0.5vh;
+        /* Reduzir a margem entre os links */
+
     }
 
     .nav_toggler div {
-        width: 2rem; /* Ajustar o tamanho do ícone do menu hamburguer */
+        width: 2rem;
+        /* Ajustar o tamanho do ícone do menu hamburguer */
     }
 }
 

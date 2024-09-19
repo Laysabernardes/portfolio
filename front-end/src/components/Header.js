@@ -12,8 +12,8 @@ function Navbar() {
 
     const navigate = useNavigate();
 
-     // Função para alternar entre os estados 'active' e 'icon' ao clicar no ícone do menu
-     const navToggle = () => {
+    // Função para alternar entre os estados 'active' e 'icon' ao clicar no ícone do menu
+    const navToggle = () => {
         // Altera a classe 'active' com base no estado atual
         if (active === "nav_menu") {
             setActive("nav_menu nav_active");
@@ -39,33 +39,35 @@ function Navbar() {
                 <p className="header_titulo">Laysa.</p>
             </div>
 
-            <ul className="nav_lista"  className= {active}>
-                <li>
-                    <a className="nav_link" onClick={(e) => {
-                        navigate("/main");
-                    }}>Home</a>
-                </li>
+            <div className="nav_lista">
+                <ul className={active}>
+                    <li>
+                        <a className="nav_link" onClick={(e) => {
+                            navigate("/main");
+                        }}>Home</a>
+                    </li>
 
-                <li>
-                    <a className="nav_link" onClick={(e) =>{
-                        navigate("/sobre");
-                    }}>Sobre</a>
-                </li>
+                    <li>
+                        <a className="nav_link" onClick={(e) => {
+                            navigate("/sobre");
+                        }}>Sobre</a>
+                    </li>
 
-                <li>
-                    <a className="nav_link" onClick={(e) => {
-                        navigate("/projeto");
-                    }}>Projetos</a>
-                </li>
+                    <li>
+                        <a className="nav_link" onClick={(e) => {
+                            navigate("/projeto");
+                        }}>Projetos</a>
+                    </li>
 
-                <li>
-                    <a className="nav_link" onClick={(e) => {
-                        navigate("/contato")
-                    }}>Contato</a>
-                </li>
+                    <li>
+                        <a className="nav_link" onClick={(e) => {
+                            navigate("/contato")
+                        }}>Contato</a>
+                    </li>
 
-                <ThemeToggleButton />
-            </ul>
+                    <ThemeToggleButton />
+                </ul>
+            </div>
 
             {/* Ícone do menu (hamburguer) para telas menores */}
             <div onClick={navToggle} className={icon}>
