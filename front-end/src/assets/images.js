@@ -1,5 +1,6 @@
-import logo from "./LOGO.svg";
+import logoLight from "./logo-light.svg";
+import logoDark from "./logo-dark.svg"
 import sun from "./sun.svg";
 import moon from "./moon.svg";
 
-export{logo, sun, moon};
+export{logoLight, logoDark, sun, moon};

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { logo } from "../assets/images.js";
+import {logoLight, logoDark } from "../assets/images.js";
 import "../styles/header.css";
 
 import ThemeToggleButton from "./ThemeToggleButton.js";
@@ -9,6 +9,7 @@ import ThemeToggleButton from "./ThemeToggleButton.js";
 function Navbar() {
     const [active, setActive] = useState("nav_menu");
     const [icon, setIcon] = useState("nav_toggler");
+    const [isDarkTheme, setIsDarkTheme] = useState(false); // Estado para o tema
 
     const navigate = useNavigate();
 
@@ -27,14 +28,23 @@ function Navbar() {
         } else {
             setIcon("nav_toggler");
         }
+    };
 
+    // Função para atualizar o tema ao receber a troca do ThemeToggleButton
+    const handleThemeChange = (isDark) => {
+        setIsDarkTheme(isDark);
     };
 
     return (
         <nav className="nav">
             <div className="header_container">
+               {/* Troca dinâmica da logo com base no estado do tema */}
                 <a href="https://www.linkedin.com/in/laysabernardes/">
-                    <img className="header_logo" src={logo} alt="Logo escrito LB de letra cursiva" />
+                    <img 
+                        className="header_logo" 
+                        src={isDarkTheme ? logoDark : logoLight} // Troca de logo com base no tema
+                        alt="Logo escrito LB de letra cursiva" 
+                    />
                 </a>
                 <p className="header_titulo">Laysa.</p>
             </div>
@@ -65,7 +75,8 @@ function Navbar() {
                         }}>Contato</a>
                     </li>
 
-                    <ThemeToggleButton />
+                    {/* Passar a função para o ThemeToggleButton para monitorar a troca de tema */}
+                    <ThemeToggleButton onThemeChange={handleThemeChange} />
                 </ul>
             </div>
 

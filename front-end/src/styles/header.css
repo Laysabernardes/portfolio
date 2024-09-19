@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: space-around;
     height: 12vh;
-    background: var(--nav-fundo-light);
+    background: var(--background-color);
 }
 
 .header_container {
@@ -23,6 +23,7 @@ body {
 .header_logo {
     width: 5vh;
     margin-top: 1vh;
+    color:var(--cor-fonte);
 }
 
 .header_titulo {
@@ -30,12 +31,14 @@ body {
     font-weight: 400;
     font-family: 'Asul', sans-serif;
     margin-left: 2vh;
+    color:var(--cor-fonte);
 }
 
 .nav_lista {
     list-style: none;
     display: flex;
     align-items: center;
+    color:var(--cor-fonte);
 }
 
 .nav_link {
@@ -47,7 +50,7 @@ body {
 .nav_link:hover {
     font-weight: 400;
     color: var(--nav-barra-light);
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--nav-destaque);
 }
 
 .nav_menu {
@@ -64,7 +67,7 @@ body {
     width: 2.5rem;
     height: 0.2rem;
     margin: 0.4rem;
-    background: var(--nav-destaque-light);
+    background: var(--nav-destaque);
     transition: 0.3s ease-in;
 }
 
@@ -83,7 +86,7 @@ body {
         /* Ajuste para ficar abaixo do header */
         right: 0;
         width: 40vw;
-        background: aliceblue;
+        background: var(--nav-menu2);
         transform: translateX(100%);
         /* Fora da tela inicialmente */
         height: 100vh;
@@ -92,7 +95,7 @@ body {
         /* Evita que o conteúdo crie barras de rolagem */
         z-index: 100;
         /* Aparecer sobre o conteúdo */
-        background: var(--nav-menu-light);
+        background: var(--nav-menu);
     }
 
     .nav_menu.nav_active {

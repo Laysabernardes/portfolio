@@ -1,8 +1,30 @@
 :root {
-  --nav-fundo-light: #C7B0E1;
-  --nav-menu-light:#D9D9D9;
-  --nav-destaque-light: black;
-  --nav-barra-light:#1E0044;
+  /* Cores para o tema claro */
+  --background-color: #C7B0E1;
+  --nav-menu:#D9D9D9;
+  --nav-menu2:aliceblue;
+  --nav-destaque: black;
+  --nav-barra:#1E0044;
+
+  --cor-fonte:black;
+
+  --botao-cor1:#874CDD;
+  --botao-cor2:#1E0044;
+  --botao-sol:#d8860b;
+  --botao-lua:#C7B0E1;
+}
+.dark-theme {
+  /* Cores para o tema escuro */
+  --background-color: #15022E;
+  --nav-menu: #692BC5;
+  --nav-menu2:black;
+  --nav-destaque: #C7B0E1;
+  --nav-barra: #d8860b;
+
+  --cor-fonte:#C7B0E1;
+
+  --botao-cor1:#874CDD;
+  --botao-cor2:#1E0044;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
