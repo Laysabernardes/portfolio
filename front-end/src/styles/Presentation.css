@@ -1,0 +1,148 @@
+.container {
+    width: 80vw;
+    max-width: 1000px;
+    /* Limita a largura máxima do container */
+    height: auto;
+    background-color: var(--presentation);
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    /* Mantém a barra e a linha em coluna */
+    justify-content: flex-start;
+    align-items: center;
+    margin: 7vh auto;
+    position: relative;
+}
+
+/* Barra de navegação simulada */
+.browser-bar {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    /* Círculos alinhados à direita */
+    align-items: center;
+}
+
+/* Linha de separação */
+.separator-line {
+    width: calc(100% + 40px);
+    /* Compensa o padding do container */
+    height: 2px;
+    background-color: var(--detalhe);
+    margin: 20px -20px;
+}
+
+/* Círculos */
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: var(--detalhe);
+}
+
+/* Estilo das seções de info e profile lado a lado */
+.info-profile-container {
+    display: flex;
+    width: 100%;
+    /* Define que o conteúdo dentro será distribuído horizontalmente */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ajuste as larguras das seções conforme necessário */
+.info {
+    flex: 2;
+    /* Ocupa 2/3 do espaço */
+    padding-right: 10px;
+    /* Espaçamento entre info e profile */
+    color: var(--fonte-presentation);
+}
+
+.titulo-presentation {
+    font-size: 3rem;
+    font-style: italic;
+    line-height: 1.0;
+    letter-spacing: 2px;
+    margin: 30px 0 30px 0;
+    color: var(--fonte-presentation);
+}
+
+.destaque-titulo {
+    font-weight: 500;
+    font-size: 3.5rem;
+    background: var(--destaque-fonte-presentation);
+    background-clip: text; /* Propriedade padrão */
+    -webkit-background-clip: text; /* Para navegadores WebKit */
+    color: transparent;
+}
+
+.text-presentation {
+    font-family: 'Montserrat', 'Segoe UI', 'Roboto';
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    margin-right: 20%;
+    color: var(--fonte-presentation);
+}
+
+.links {
+    display: flex;
+    gap: 5%; /* Espaço entre os itens, ajuste conforme necessário */
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+.links ul {
+    display: flex; /* Para exibir os itens da lista em linha */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    list-style: none; /* Remove as bolinhas da lista */
+}
+.rede-social{
+    margin:5% 5% 5% 0%;
+}
+.botao{
+    border-radius: 15px;
+    padding: 20px 50px; /* Ajuste o padding conforme necessário */
+    background: linear-gradient(120deg, #AF8ADE, #601EB5);
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove borda padrão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    display: flex; /* Para que ele se comporte como um item flexível */
+    align-items: center; /* Alinha o conteúdo dentro do botão */
+    justify-content: center; /* Centraliza o texto do botão */
+    white-space: nowrap; /* Impede que o texto quebre em múltiplas linhas */
+}
+
+.profile {
+    flex: 1;
+    /* Ocupa 1/3 do espaço */
+    display: flex;
+    flex-direction: column;
+    /* Alinha imagem e legenda verticalmente */
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 400px;
+    /* Define a largura máxima da imagem */
+    height: auto;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 5rem;
+    /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: lighter;
+    color: transparent;
+    /* Deixa o interior transparente */
+    -webkit-text-stroke: 0.5px rgba(252, 252, 252, 0.4);
+    /* Define a espessura e a cor do contorno */
+    margin-top: -30%;
+    text-align: center;
+}

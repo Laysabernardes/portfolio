@@ -6,28 +6,22 @@ import "../styles/header.css";
 
 import ThemeToggleButton from "./ThemeToggleButton.js";
 
-function Navbar() {
+function Navbar({ onThemeChange }) {
     const [active, setActive] = useState("nav_menu");
     const [icon, setIcon] = useState("nav_toggler");
     const [isDarkTheme, setIsDarkTheme] = useState(false); // Estado para o tema
 
     const navigate = useNavigate();
 
+    // Atualiza o estado do tema quando a função onThemeChange é chamada
+    useEffect(() => {
+        onThemeChange(isDarkTheme); // Notifica o pai sobre o tema atual
+    }, [isDarkTheme, onThemeChange]);
+
     // Função para alternar entre os estados 'active' e 'icon' ao clicar no ícone do menu
     const navToggle = () => {
-        // Altera a classe 'active' com base no estado atual
-        if (active === "nav_menu") {
-            setActive("nav_menu nav_active");
-        } else {
-            setActive("nav_menu");
-        }
-
-        // Altera a classe 'icon' com base no estado atual
-        if (icon === "nav_toggler") {
-            setIcon("nav_toggler toggle");
-        } else {
-            setIcon("nav_toggler");
-        }
+        setActive(active === "nav_menu" ? "nav_menu nav_active" : "nav_menu");
+        setIcon(icon === "nav_toggler" ? "nav_toggler toggle" : "nav_toggler");
     };
 
     // Função para atualizar o tema ao receber a troca do ThemeToggleButton

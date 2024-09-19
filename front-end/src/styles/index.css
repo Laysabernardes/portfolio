@@ -1,5 +1,6 @@
 :root {
   /* Cores para o tema claro */
+  --fundo:#ddc0ff;
   --background-color: #C7B0E1;
   --nav-menu:#D9D9D9;
   --nav-menu2:aliceblue;
@@ -12,9 +13,16 @@
   --botao-cor2:#1E0044;
   --botao-sol:#d8860b;
   --botao-lua:#C7B0E1;
+
+  --presentation:#947BB2;
+  --detalhe:#a997be;
+  --fonte-presentation: white;
+  --destaque-fonte-presentation:linear-gradient(90deg, #1E0044, #B923FF);
 }
 .dark-theme {
   /* Cores para o tema escuro */
+  --fundo:#492875;
+
   --background-color: #15022E;
   --nav-menu: #692BC5;
   --nav-menu2:black;
@@ -25,6 +33,13 @@
 
   --botao-cor1:#874CDD;
   --botao-cor2:#1E0044;
+
+  --presentation:#2E0E5B;
+  --detalhe:#614b81;
+  --fonte-presentation: white;
+  --destaque-fonte-presentation:linear-gradient(120deg, #530bb1, #cf0fff);
+
+  
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -36,6 +51,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--fundo);
 }
 
 code {
