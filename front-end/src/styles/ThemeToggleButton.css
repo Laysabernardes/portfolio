@@ -9,7 +9,7 @@ label {
     height: 8vh;
     position: relative;
     display: block;
-    background: linear-gradient(90deg, #874CDD 0%, #1E0044 100%);
+    background: linear-gradient(90deg, var(--botao-cor1)  0%, var(--botao-cor2) 100%);
     border-radius: 200px;
     box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.4), inset 0px -5px 20px 0px rgba(255, 255, 255, 0.4);
     cursor: pointer;
@@ -22,7 +22,7 @@ label:after {
     position: absolute;
     top: 1vh;
     left: 1vh;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    background: linear-gradient(180deg, #ffcc89, var(--botao-sol));
     border-radius: 180px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -35,14 +35,14 @@ input {
 }
 
 input:checked+label {
-    background: linear-gradient(280deg, #874CDD 0%, #1E0044 100%); 
+    background: linear-gradient(280deg, var(--botao-cor1) 0%, var(--botao-cor2) 100%); 
     transition: 0.5;
 }
 
 input:checked+label:after {
     left: 17vh;
     transform: translateX(-100%);
-    background: linear-gradient(180deg, #fff, #C7B0E1);
+    background: linear-gradient(180deg, #fff, var(--botao-lua));
     
 }
 
@@ -74,19 +74,19 @@ label img {
 label img.sun {
     width: 6vh;
     left:1vh;
-    fill:#1E0044;
+    fill:var(--botao-cor1);
     transition: 0.3s;
 }
   label img.moon {
     width: 6vh;
     left:11vh;
-    fill:#874CDD;
+    fill:var(--botao-cor1);
     transition: 0.3s;
 }
   input:checked + label img.sun {
-    fill:#1E0044;
+    fill:var(--botao-cor2);
 }
 
   input:checked + label img.moon {
-    fill:#874CDD;
+    fill:var(--botao-cor1);
 }
