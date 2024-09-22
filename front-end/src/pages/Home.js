@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from "../components/Header.js";
 import Presentation from "../components/Presentation.js";
+import Technologies from '../components/Technologies.js';
 
 const Home = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -14,6 +15,7 @@ const Home = () => {
         <div>
             <Header onThemeChange={handleThemeChange} />
             <Presentation isDarkTheme={isDarkTheme} />
+            <Technologies isDarkTheme={isDarkTheme}/>
         </div>
     );
 
