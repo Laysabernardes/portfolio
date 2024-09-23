@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Header from "../components/Header.js";
 import Presentation from "../components/Presentation.js";
 import Technologies from '../components/Technologies.js';
@@ -18,7 +18,6 @@ const Home = () => {
             <Technologies isDarkTheme={isDarkTheme}/>
         </div>
     );
-
 };
 
 export default Home;

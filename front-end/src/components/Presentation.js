@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React from "react";
 
 import "../styles/Presentation.css";
 import { fotoLight, fotoDark, linkedln, gmail, github } from "../assets/images.js";
 
-
 function Presentation({ isDarkTheme }) {
-
 
     return (
         <div className="container">

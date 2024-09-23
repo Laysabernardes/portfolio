@@ -28,7 +28,7 @@ function Technologies({ isDarkTheme }) {
             }
         };
         fetchTechnologies(); //chama a função sempre que a categoria mudar
-    }, [categoria]); //usa o useEffect dependo da categoria
+    }, [categoria]); 
 
     const handleCategoriaClick = (novaCategoria) => {
         setCategoria(novaCategoria);
@@ -49,7 +49,6 @@ function Technologies({ isDarkTheme }) {
             <div className="separator-line-tech"></div>
 
             <h1 className="titulo-section-tech">Hard Skills</h1>
-
 
             <div className="group-button">
                 {categoria && (
@@ -84,7 +83,6 @@ function Technologies({ isDarkTheme }) {
                     ))
                 )}
             </div>
-
         </div>
     )
 }
