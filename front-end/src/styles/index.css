@@ -21,12 +21,16 @@
 
   --tech: #684B93;
   --fonte-tech: white;
-  --titulo-tech: #32145F;
+  --titulo-tech: #492875;
   --h2-tech: rgba(252, 252, 252, 0.6);
   --btn-outro: #692BC5;
   --btn-back: #874CDD;
   --btn-front: #A179DC;
+  --btn-reset: rgb(207, 35, 35);
   --container-icon: linear-gradient(90deg, #684B93, #B07FF9);
+  --container-nivel:#7335cf;
+  --border-nivel:#492875;
+  --button-hover-color:#2E0E5B;
 }
 
 .dark-theme {
@@ -56,6 +60,10 @@
   --btn-back: #4F07BA;
   --btn-front: #572C98;
   --container-icon: linear-gradient(90deg, #4F07BA, #572C98);
+  --container-nivel:#400292;
+  --border-nivel:#874CDD;
+  --button-hover-color:#874CDD;
+  ;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
