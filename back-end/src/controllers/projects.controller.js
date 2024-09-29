@@ -28,12 +28,18 @@ export const create = async (req, res) => {
         }
 
         // Popula as tecnologias associadas e retorna o projeto com as tecnologias completas
-        const populatedProject = await Projects.findById(project._id).populate('technologies').exec();
+        const populatedProject = await Projects.findById(project._id).populate('technologies', 'name').exec();
+
+         // Mapeia as tecnologias para obter apenas os nomes
+         const technologyNames = populatedProject.technologies.map(tech => tech.name);
         
         // Retorna o projeto recém-criado como resposta
         res.status(201).send({
             message: "Projeto criado com sucesso!",
-            project: populatedProject
+            project: {
+                ...populatedProject.toObject(), // Transforma o projeto em objeto
+                technologyNames // Adiciona os nomes das tecnologias
+            }
         });
 
     } catch (err) {
