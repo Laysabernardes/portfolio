@@ -75,17 +75,6 @@ function Projects() {
                             <img src={projects[currentPage - 1].image} alt={projects[currentPage - 1].title} />
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
                 </div>
             ) : (
                 <p>Carregando projetos...</p>
