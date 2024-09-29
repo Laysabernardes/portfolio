@@ -32,12 +32,12 @@ function Projects() {
             {projects.map((project) => (
                 <div key={project.id} className="project-container">
                     <div className="info-projects">
-                        <p className="categoria">{project.category}</p>
-                        <h2 className="title">{project.title}</h2>
-                        <p className="tech">
+                        <p className="categoria-project">{project.category}</p>
+                        <h2 className="title-project">{project.title}</h2>
+                        <p className="tech-project">
                             {Array.isArray(project.technologies) && project.technologies.length > 0
                                 ? project.technologies.map(tech => (
-                                    <span className="tech-item" key={tech._id}>
+                                    <span className="tech-item-project" key={tech._id}>
                                         {tech.name}
                                     </span>
                                 ))
@@ -45,7 +45,7 @@ function Projects() {
                         </p>
                         <div>
                             <p className="descricao-projects">{project.description}</p>
-                            <div className="links">
+                            <div className="links-project">
                                 <button>
                                     <a href={project.demoURL} target="_blank" rel="noopener noreferrer">Ver Projeto</a>
                                 </button>
@@ -55,7 +55,7 @@ function Projects() {
                             </div>
                         </div>
                     </div>
-                    <div className="image-container">
+                    <div className="image-container-project">
                         <img src={project.image} alt={project.title} />
                     </div>
                 </div>

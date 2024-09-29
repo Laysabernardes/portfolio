@@ -17,7 +17,7 @@
   --presentation: #947BB2;
   --detalhe: #a997be;
   --fonte-presentation: white;
-  --destaque-fonte-presentation: linear-gradient(90deg, #1E0044, #B923FF);
+  --destaque-fonte-presentation: linear-gradient(120deg, #1E0044, #B923FF);
 
   --tech: #684B93;
   --fonte-tech: white;
@@ -31,6 +31,16 @@
   --container-nivel:#7335cf;
   --border-nivel:#492875;
   --button-hover-color:#2E0E5B;
+
+  --font-project-categoria:black;
+  --fundo-project: #E9DEFF;
+  --sombra-project: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  --button-project-tech: #492875;
+  --button-fonte-project-tech: white;
+  --button-link-project:#8338EC;
+  --button-link-project-hover:linear-gradient(90deg, #8338EC, #B923FF);
+  --button-link-project-fonte:white;
+  --image-project: #492875;
 }
 
 .dark-theme {
@@ -63,7 +73,8 @@
   --container-nivel:#400292;
   --border-nivel:#874CDD;
   --button-hover-color:#874CDD;
-  ;
+  
+  
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
