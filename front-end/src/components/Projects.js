@@ -6,6 +6,7 @@ import "../styles/Projects.css";
 function Projects() {
     const [projects, setProjects] = useState([]);
 
+
     useEffect(() => {
         const fetchProjects = async () => {
             try {
@@ -15,7 +16,7 @@ function Projects() {
                 if (response.status === 200) {
                     const data = response.data || [];
                     console.log("Dados dos projetos: ", data);
-                    setProjects(data); 
+                    setProjects(data);
                 } else {
                     console.error("Erro na resposta da API: ", response.status);
                 }
@@ -27,32 +28,39 @@ function Projects() {
     }, []);
 
     return (
-        <div>
-        {/* Mapeia os projetos do estado e exibe as informações */}
-        {projects.map((project) => (
-            <div key={project.id}>
-                <div className="info-projects">
-                    <p>{project.category}</p>
-                    <h2>{project.title}</h2>
-                    <p>{project.technologies}</p>
+        <div className="project-card">
+            {projects.map((project) => (
+                <div key={project.id} className="project-container">
+                    <div className="info-projects">
+                        <p className="categoria">{project.category}</p>
+                        <h2 className="title">{project.title}</h2>
+                        <p className="tech">
+                            {Array.isArray(project.technologies) && project.technologies.length > 0
+                                ? project.technologies.map(tech => (
+                                    <span className="tech-item" key={tech._id}>
+                                        {tech.name}
+                                    </span>
+                                ))
+                                : "Tecnologia não disponível"}
+                        </p>
+                        <div>
+                            <p className="descricao-projects">{project.description}</p>
+                            <div className="links">
+                                <button>
+                                    <a href={project.demoURL} target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+                                </button>
+                                <button>
+                                    <a href={project.repositoryURL} target="_blank" rel="noopener noreferrer">Ver Código</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <img src={project.image} alt={project.title} />
+                    </div>
                 </div>
-
-                <div className="descricao-projects">
-                    <p>{project.description}</p>
-                    <button>
-                        <a href={project.demoURL} target="_blank" rel="noopener noreferrer">Ver Projeto</a>
-                    </button>
-                    <button>
-                        <a href={project.repositoryURL} target="_blank" rel="noopener noreferrer">Ver Código</a>
-                    </button>
-                </div>
-
-                <div>
-                    <img src={project.image} alt={project.title} />
-                </div>
-            </div>
-        ))}
-    </div>
+            ))}
+        </div>
     );
 }
 
