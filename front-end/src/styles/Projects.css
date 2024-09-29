@@ -1,3 +1,21 @@
+.projects-wrapper {
+    width: 100%;
+    height: auto;
+    margin-top: 10%;
+    padding: 3% 0 3% 0;
+    background-color: var(--wrapper-project);
+}
+
+.title-section-project {
+    font-size: 7rem;
+    margin: -8% 0 3% 4%;
+    text-align: left;
+    font-family: 'Monteserrat', Georgia, serif;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 3px var(--wrapper-project-fonte);
+}
+
 .project-card {
     width: 80%;
     max-width: 1000px;
@@ -108,7 +126,45 @@
     border: var(--image-project) 3px solid;
 }
 
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    
+}
+
+.pagination-controls button {
+    font-size: 1rem;
+    padding: 1% 3%;
+    margin: 0 2%;
+    background-color: var(--btn-paginacao-project);
+    color: var(--btn-paginacao-project-fonte);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination-controls button:not(:disabled):hover  {
+    background: var(--btn-paginacao-project-hover);
+}
+
+.pagination-controls button:disabled {
+    background-color: var(--btn-paginacao-project-disabled);
+    cursor: not-allowed;
+}
+
+.pagination-controls span {
+    font-size: 1.2rem;
+    color: var(--btn-paginacao-project-fonte2);
+}
+
 @media screen and (max-width: 1024px) {
+    .title-section-project {
+        font-size: 6rem;
+        margin: -9% 0 0 4%;
+    }
+
     .info-projects {
         flex: 0 0 40%;
         margin: 0;
@@ -124,9 +180,17 @@
     .image-container-project img {
         width: 90%;
     }
+
+    .pagination-controls {
+        margin-top: 0;  
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .title-section-project {
+        font-size: 5rem;
+    }
+
     .project-card {
         margin: 5vh auto;
         flex-direction: column;
@@ -175,9 +239,17 @@
     .image-container-project img {
         width: 80vh;
     }
+
+    .pagination-controls button {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
+    .title-section-project {
+        font-size: 4rem;
+        margin: -9% 0 0 4%;
+    }
     .categoria-project {
         font-weight: 600;
         margin-bottom: 3%;
@@ -193,6 +265,14 @@
 }
 
 @media screen and (max-width: 480px) {
+    .projects-wrapper {
+        margin-top: 8%;
+        padding: 2% 0 3% 0;
+    }
+    .title-section-project {
+        font-size: 3rem;
+        margin: -9% 0 0 4%;
+    }
     .title-project {
         font-size: 1.8rem;
     }

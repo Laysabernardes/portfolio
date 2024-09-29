@@ -42,6 +42,13 @@
   --button-link-project-hover:linear-gradient(90deg, #8338EC, #B923FF);
   --button-link-project-fonte:white;
   --image-project: #492875;
+  --btn-paginacao-project:#6e00ff;
+  --btn-paginacao-project-fonte:white;
+  --btn-paginacao-project-hover:linear-gradient(90deg, #6e00ff, #B923FF);
+  --btn-paginacao-project-disabled:#afabab;
+  --btn-paginacao-project-fonte2:white;
+  --wrapper-project: #874CDD;
+  --wrapper-project-fonte:rgb(52, 12, 90);
 }
 
 .dark-theme {
@@ -74,6 +81,7 @@
   --container-nivel:#400292;
   --border-nivel:#874CDD;
   --button-hover-color:#874CDD;
+
   --font-project-categoria:#E9DEFF;
   --fundo-project: #330775;
   --sombra-project: 0px 10px 20px rgba(148, 148, 148, 0.151);
@@ -84,6 +92,13 @@
   --button-link-project-hover:linear-gradient(90deg, #8338EC, #cf0fff);
   --button-link-project-fonte:white;
   --image-project: #8338EC;
+  --btn-paginacao-project:#5707be;
+  --btn-paginacao-project-fonte:white;
+  --btn-paginacao-project-hover:linear-gradient(90deg, #8917e7, #2c0e5b);
+  --btn-paginacao-project-disabled:#afabab;
+  --btn-paginacao-project-fonte2:white;
+  --wrapper-project: #6738ad;
+  --wrapper-project-fonte:rgba(215, 197, 231, 0.932);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
