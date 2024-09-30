@@ -7,5 +7,6 @@ import fotoDark from "./foto-dark.png";
 import gmail from "./gmail.svg";
 import linkedln from "./linkedln.svg";
 import github from "./github.svg";
+import AvatarAbout from "./avatar-about.png"
 
-export{logoLight, logoDark, sun, moon, fotoLight, fotoDark, gmail, linkedln, github};
+export{logoLight, logoDark, sun, moon, fotoLight, fotoDark, gmail, linkedln, github, AvatarAbout};
