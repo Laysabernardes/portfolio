@@ -1,0 +1,52 @@
+.section-about {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    /* Mantém a barra e a linha em coluna */
+    justify-content: flex-start;
+    align-items: center;
+    margin: 7vh auto;
+    position: relative;
+}
+
+.titulo-about {
+    font-size: 4rem;
+    margin: 3% 0 3% 0;
+    text-align: right;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 3px var(--wrapper-project-fonte);
+}
+
+.container-about {
+    margin: 1% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-img {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.avatar-about {
+    width: 50vh;
+    max-width: 100%;
+    height: auto;
+}
+
+.texto-about {
+    flex: 0 0 50%;
+    font-size: 1.5rem;
+    margin: 2% 0 0 0;
+    text-align: justify;
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+    color: purple;
+    transition: color 0.3s ease;
+}

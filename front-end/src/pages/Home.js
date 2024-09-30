@@ -3,6 +3,7 @@ import Header from "../components/Header.js";
 import Presentation from "../components/Presentation.js";
 import Technologies from '../components/Technologies.js';
 import Projects from '../components/Projects.js';
+import About from '../components/About.js';
 
 const Home = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -18,6 +19,7 @@ const Home = () => {
             <Presentation isDarkTheme={isDarkTheme} />
             <Technologies isDarkTheme={isDarkTheme}/>
             <Projects isDarkTheme={isDarkTheme}/>
+            <About isDarkTheme={isDarkTheme}/>
         </div>
     );
 };
