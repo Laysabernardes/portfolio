@@ -44,4 +44,5 @@ Contribuições são bem-vindas! Se você tiver sugestões, melhorias ou correç
 
 ## 📬 Contato
 Para mais informações, entre em contato pelo e-mail: laysabernardes.ads@gmail.com
+
 Obrigado por visitar o meu portfólio! 🚀
