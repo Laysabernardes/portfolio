@@ -50,3 +50,54 @@
     color: purple;
     transition: color 0.3s ease;
 }
+
+@media screen and (max-width: 1024px) {
+    .titulo-about {
+        font-size: 2.5rem;
+        margin: 3% 0 3% 0;
+        text-align: center;
+    }
+
+    .texto-about {
+        font-size: 1rem;
+    }
+
+    .avatar-about {
+        width: 40vh;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .container-about {
+        flex-direction: column;
+    }
+
+    .about-img {
+        flex: 0 0 100%;
+    }
+
+    .texto-about {
+        flex: 0 0 100%;
+    }
+
+    .avatar-about {
+        width: 35vh;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .avatar-about {
+        width: 30vh;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .avatar-about {
+        width: 25vh;
+        height: auto;
+    }
+}
