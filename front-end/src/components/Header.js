@@ -24,7 +24,6 @@ function Navbar({ onThemeChange }) {
         setIcon(icon === "nav_toggler" ? "nav_toggler toggle" : "nav_toggler");
     };
 
-    // Função para atualizar o tema ao receber a troca do ThemeToggleButton
     const handleThemeChange = (isDark) => {
         setIsDarkTheme(isDark);
     };
