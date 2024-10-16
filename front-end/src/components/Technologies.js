@@ -3,6 +3,8 @@ import api from '../api';
 
 import "../styles/Technologies.css";
 
+import AnimatedSection from '../components/AnimatedSection.jsx';
+
 function Technologies({ isDarkTheme }) {
     const [tecnologia, setTecnologia] = useState([]);
     const [categoria, setCategoria] = useState('');
@@ -40,6 +42,7 @@ function Technologies({ isDarkTheme }) {
     };
 
     return (
+        <AnimatedSection>
         <div className="container-tech">
             <div className="browser-bar-tech">
                 <div className="circle-tech "></div>
@@ -84,6 +87,7 @@ function Technologies({ isDarkTheme }) {
                 )}
             </div>
         </div>
+        </AnimatedSection>
     )
 }
 

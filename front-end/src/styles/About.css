@@ -37,6 +37,23 @@
     height: auto;
 }
 
+.floating-image{
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px); 
+    }
+    100% {
+        transform: translateY(0px); 
+
+    }
+}
+
 .texto-about {
     flex: 0 0 50%;
     font-size: 1.5rem;

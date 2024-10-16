@@ -6,6 +6,7 @@ import Projects from '../components/Projects.js';
 import About from '../components/About.js';
 import Footer from '../components/Footer.js';
 
+
 const Home = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
 
@@ -16,12 +17,14 @@ const Home = () => {
 
     return (
         <div>
-            <Header onThemeChange={handleThemeChange} />
-            <Presentation isDarkTheme={isDarkTheme} />
-            <Technologies isDarkTheme={isDarkTheme}/>
-            <Projects isDarkTheme={isDarkTheme}/>
-            <About isDarkTheme={isDarkTheme}/>
-            <Footer isDarkTheme={isDarkTheme}/>
+            
+                <Header onThemeChange={handleThemeChange} />
+                <Presentation isDarkTheme={isDarkTheme} />
+                <Technologies isDarkTheme={isDarkTheme} />
+                <Projects isDarkTheme={isDarkTheme} />
+                <About isDarkTheme={isDarkTheme} />
+                <Footer isDarkTheme={isDarkTheme} />
+            
         </div>
     );
 };

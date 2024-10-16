@@ -3,9 +3,12 @@ import React from "react";
 import "../styles/Presentation.css";
 import { fotoLight, fotoDark, linkedln, gmail, github } from "../assets/images.js";
 
+import AnimatedSection from '../components/AnimatedSection.jsx';
+
 function Presentation({ isDarkTheme }) {
 
     return (
+        <AnimatedSection>
         <div className="container">
             <div className="browser-bar">
                 <div className="circle "></div>
@@ -60,6 +63,7 @@ function Presentation({ isDarkTheme }) {
                 </section>
             </div>
         </div>
+        </AnimatedSection>
     );
 }
 
