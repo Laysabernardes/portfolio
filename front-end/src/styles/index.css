@@ -1,5 +1,8 @@
 :root {
   /* Cores para o tema claro */
+  --loader-fundo: #C7B0E1;
+  --loader-carregamento: #7c4c86;
+
   --fundo: #ddc0ff;
   --background-color: #C7B0E1;
   --nav-menu: #D9D9D9;
@@ -56,6 +59,9 @@
 
 .dark-theme {
   /* Cores para o tema escuro */
+  --loader-fundo: #492875;
+  --loader-carregamento: #7c4c86;
+
   --fundo: #492875;
 
   --background-color: #15022E;
