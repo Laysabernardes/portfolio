@@ -28,27 +28,30 @@
   --btn-front: #A179DC;
   --btn-reset: rgb(207, 35, 35);
   --container-icon: linear-gradient(90deg, #684B93, #B07FF9);
-  --container-nivel:#7335cf;
-  --border-nivel:#492875;
-  --button-hover-color:#2E0E5B;
+  --container-nivel: #7335cf;
+  --border-nivel: #492875;
+  --button-hover-color: #2E0E5B;
 
-  --font-project-categoria:black;
+  --font-project-categoria: black;
   --fundo-project: #E9DEFF;
   --sombra-project: 0px 10px 20px rgba(0, 0, 0, 0.2);
   --button-project-tech: #492875;
   --button-fonte-project-tech: white;
   --font-project-descricao: black;
-  --button-link-project:#8338EC;
-  --button-link-project-hover:linear-gradient(90deg, #8338EC, #B923FF);
-  --button-link-project-fonte:white;
+  --button-link-project: #8338EC;
+  --button-link-project-hover: linear-gradient(90deg, #8338EC, #B923FF);
+  --button-link-project-fonte: white;
   --image-project: #492875;
-  --btn-paginacao-project:#6e00ff;
-  --btn-paginacao-project-fonte:white;
-  --btn-paginacao-project-hover:linear-gradient(90deg, #6e00ff, #B923FF);
-  --btn-paginacao-project-disabled:#afabab;
-  --btn-paginacao-project-fonte2:white;
+  --btn-paginacao-project: #6e00ff;
+  --btn-paginacao-project-fonte: white;
+  --btn-paginacao-project-hover: linear-gradient(90deg, #6e00ff, #B923FF);
+  --btn-paginacao-project-disabled: #afabab;
+  --btn-paginacao-project-fonte2: white;
   --wrapper-project: #874CDD;
-  --wrapper-project-fonte:rgb(52, 12, 90);
+  --wrapper-project-fonte: rgb(52, 12, 90);
+
+  --footer-fundo: #b58dbe;
+  --footer-hr: #7c4c86;
 }
 
 .dark-theme {
@@ -78,27 +81,30 @@
   --btn-back: #4F07BA;
   --btn-front: #572C98;
   --container-icon: linear-gradient(90deg, #4F07BA, #572C98);
-  --container-nivel:#400292;
-  --border-nivel:#874CDD;
-  --button-hover-color:#874CDD;
+  --container-nivel: #400292;
+  --border-nivel: #874CDD;
+  --button-hover-color: #874CDD;
 
-  --font-project-categoria:#E9DEFF;
+  --font-project-categoria: #E9DEFF;
   --fundo-project: #330775;
   --sombra-project: 0px 10px 20px rgba(148, 148, 148, 0.151);
   --button-project-tech: #d76ef1;
   --button-fonte-project-tech: #E9DEFF;
-  --font-project-descricao:#E9DEFF;
-  --button-link-project:#bc2cf5;
-  --button-link-project-hover:linear-gradient(90deg, #8338EC, #cf0fff);
-  --button-link-project-fonte:white;
+  --font-project-descricao: #E9DEFF;
+  --button-link-project: #bc2cf5;
+  --button-link-project-hover: linear-gradient(90deg, #8338EC, #cf0fff);
+  --button-link-project-fonte: white;
   --image-project: #8338EC;
-  --btn-paginacao-project:#5707be;
-  --btn-paginacao-project-fonte:white;
-  --btn-paginacao-project-hover:linear-gradient(90deg, #8917e7, #2c0e5b);
-  --btn-paginacao-project-disabled:#afabab;
-  --btn-paginacao-project-fonte2:white;
+  --btn-paginacao-project: #5707be;
+  --btn-paginacao-project-fonte: white;
+  --btn-paginacao-project-hover: linear-gradient(90deg, #8917e7, #2c0e5b);
+  --btn-paginacao-project-disabled: #afabab;
+  --btn-paginacao-project-fonte2: white;
   --wrapper-project: #6738ad;
-  --wrapper-project-fonte:rgba(215, 197, 231, 0.932);
+  --wrapper-project-fonte: rgba(215, 197, 231, 0.932);
+
+  --footer-fundo: #705199;
+  --footer-hr: rgb(83, 12, 97);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');

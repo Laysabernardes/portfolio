@@ -1,0 +1,180 @@
+.footer {
+    background-color: var(--footer-fundo);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-nome,
+.footer-contato {
+    flex: 0 0 30%;
+    margin: 3% 5% 0% 0%;
+    /* Aumente o valor lateral conforme necessário */
+    text-align: center;
+}
+
+.footer-img {
+    flex: 0 0 30%;
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    border: none;
+    border-top: 7px solid var(--footer-hr);
+    border-radius: 15px;
+    width: 80%;
+    margin: 0;
+}
+
+.footer-titulo {
+    font-size: 3rem;
+    font-weight: lighter;
+    text-align: start;
+}
+
+.footer-despedida {
+    font-size: 1rem;
+    margin-top: 4%;
+    padding-top: 5%;
+    width: 90%;
+    text-align: start;
+}
+
+.footer-contato h3 {
+    font-size: 1.5rem;
+    margin-bottom: 3%;
+    text-align: start;
+}
+
+.footer-contato li {
+    font-size: 1rem;
+    margin-top: 1%;
+    text-align: start;
+}
+
+.footer-img img {
+    max-width: 80%;
+    height: auto;
+}
+
+.footer-copy {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-content {
+        width: 80%;
+    }
+
+    .footer-nome,
+    .footer-contato {
+        flex: 0 0 25%;
+    }
+
+    .footer-img {
+        flex: 0 0 25%;
+    }
+}
+
+/* Dispositivos até 768px (tablets) */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        width: 80%;
+    }
+
+    .footer-nome,
+    .footer-contato {
+        flex: 0 0 30%;
+    }
+
+    .footer-img {
+        flex: 0 0 30%;
+    }
+
+    .footer-despedida {
+        width: 100%;
+    }
+}
+
+/* Dispositivos até 600px (smartphones maiores) */
+@media screen and (max-width: 600px) {
+
+    .footer-nome,
+    .footer-contato {
+        flex: 0 0 40%;
+        text-align: center;
+    }
+
+    .footer-img {
+        flex: 0 0 100%;
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    .footer-img img {
+        max-width: 30%;
+        height: auto;
+    }
+
+    .footer-titulo {
+        font-size: 2.5rem;
+    }
+
+    .footer-contato h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-copy {
+        margin-top: 10px;
+    }
+}
+
+/* Dispositivos até 480px (smartphones menores) */
+@media screen and (max-width: 480px) {
+    .footer-content {
+        width: 90%;
+    }
+
+    .footer-nome,
+    .footer-contato {
+        flex: 0 0 80%;
+        text-align: center;
+    }
+
+    .footer-titulo {
+        font-size: 2rem;
+    }
+
+    .footer-despedida {
+        font-size: 0.9rem;
+        width: 100%;
+        margin-bottom: 4%;
+    }
+
+    .footer-img img {
+        max-width: 60%;
+    }
+
+    .footer-copy {
+        font-size: 0.9rem;
+    }
+}

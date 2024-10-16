@@ -12,14 +12,16 @@ const About = () => {
                 </div>
                 <div>
                     <h1 className='titulo-about'>Sobre Mim.</h1>
-                    <p className='texto-about'>
-                        Sou uma profissional <span className='highlight'>organizada</span> e <span className='highlight'>dedicada</span>, sempre em
-                        busca de <span className='highlight'>excelência</span>. Com um perfil <span className='highlight'>analítico</span>, mantenho
-                        minhas tarefas sob controle para garantir <span className='highlight'>produtividade</span>. Nos meus momentos de lazer, gosto
-                        de atividades criativas como pintura e crochê, que me ajudam a relaxar e explorar
-                        novas ideias. Estou sempre aberta a <span className='highlight'>aprender</span> e a aplicar
-                        minha <span className='highlight'>criatividade</span> em projetos desafiadores, contribuindo
-                        para <span className='highlight'>soluções inovadoras</span>.
+                    <p>
+                        Estou sempre em busca de aprender algo novo, seja por meio de bootcamps, cursos ou projetos práticos. Atualmente, estou envolvida em uma iniciação científica sobre <strong>como a Inteligência Artificial Generativa pode transformar o ensino de programação</strong>, explorando conceitos de Python e programação em dupla.
+                    </p>
+                    <br></br>
+                    <p>
+                        Gosto de organizar minhas tarefas, encarar desafios com curiosidade e buscar soluções criativas. Acredito que colaborar é a melhor forma de crescer — tanto como pessoa quanto profissional. Programar, para mim, é uma mistura de lógica e arte, e cada linha de código é uma chance de descobrir algo novo.
+                    </p>
+                    <br></br>
+                    <p>
+                        Seja criando projetos ou participando de pesquisas, estou sempre pronta para contribuir e evoluir.
                     </p>
                 </div>
             </div>

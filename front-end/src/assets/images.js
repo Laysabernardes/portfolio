@@ -8,5 +8,6 @@ import gmail from "./gmail.svg";
 import linkedln from "./linkedln.svg";
 import github from "./github.svg";
 import AvatarAbout from "./avatar-about.png"
+import avatarFooter from "./footer.png";
 
-export{logoLight, logoDark, sun, moon, fotoLight, fotoDark, gmail, linkedln, github, AvatarAbout};
+export{logoLight, logoDark, sun, moon, fotoLight, fotoDark, gmail, linkedln, github, AvatarAbout, avatarFooter};
