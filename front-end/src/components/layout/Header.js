@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import {logoLight, logoDark } from "../assets/images.js";
-import "../styles/header.css";
+import {logoLight, logoDark } from "../../assets/images.js";
+import "./Header.css";
 
-import ThemeToggleButton from "./ThemeToggleButton.js";
+import ThemeToggleButton from "../shared/ThemeToggleButton.js";
 
 function Navbar({ onThemeChange }) {
     const [active, setActive] = useState("nav_menu");

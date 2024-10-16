@@ -1,9 +1,9 @@
 import React from "react";
 
-import "../styles/Presentation.css";
-import { fotoLight, fotoDark, linkedln, gmail, github } from "../assets/images.js";
+import "./Presentation.css";
+import { fotoLight, fotoDark, linkedln, gmail, github } from "../../assets/images.js";
 
-import AnimatedSection from '../components/AnimatedSection.jsx';
+import AnimatedSection from '../shared/AnimatedSection.jsx';
 
 function Presentation({ isDarkTheme }) {
 

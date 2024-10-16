@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import api from '../api';
+import api from '../../api.js';
 
-import "../styles/Technologies.css";
+import "./Technologies.css";
 
-import AnimatedSection from '../components/AnimatedSection.jsx';
+import AnimatedSection from '../shared/AnimatedSection.jsx';
 
 function Technologies({ isDarkTheme }) {
     const [tecnologia, setTecnologia] = useState([]);

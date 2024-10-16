@@ -1,7 +1,7 @@
 import React from 'react';
 
-import '../styles/About.css';
-import { AvatarAbout } from '../assets/images.js';
+import './About.css';
+import { AvatarAbout } from '../../assets/images.js';
 
 const About = () => {
     return (

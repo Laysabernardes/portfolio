@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import api from '../api';
+import api from '../../api';
 
-import "../styles/Projects.css";
+import "./Projects.css";
 
 function Projects() {
     const [projects, setProjects] = useState([]);

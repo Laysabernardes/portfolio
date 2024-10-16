@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Header from "../components/Header.js";
-import Presentation from "../components/Presentation.js";
-import Technologies from '../components/Technologies.js';
-import Projects from '../components/Projects.js';
-import About from '../components/About.js';
-import Footer from '../components/Footer.js';
+import Header from "../components/layout/Header.js";
+import Presentation from "../components/sections/Presentation.js";
+import Technologies from '../components/sections/Technologies.js';
+import Projects from '../components/sections/Projects.js';
+import About from '../components/sections/About.js';
+import Footer from '../components/layout/Footer.js';
 
 
 const Home = () => {

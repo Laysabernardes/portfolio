@@ -1,6 +1,6 @@
 import React from 'react';
 import useIntersectionObserver from './useIntersectionObserver';
-import '../styles/animated.css'; // Importar as animações
+import './animated.css'; 
 
 const AnimatedSection = ({ children }) => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.3 });

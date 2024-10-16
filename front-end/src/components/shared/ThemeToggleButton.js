@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/ThemeToggleButton.css';
-import { sun, moon } from "../assets/images.js";
+import './ThemeToggleButton.css';
+import { sun, moon } from "../../assets/images.js";
 
 function ThemeToggleButton({ onThemeChange }) {
     const [isDarkTheme, setIsDarkTheme] = useState(false);

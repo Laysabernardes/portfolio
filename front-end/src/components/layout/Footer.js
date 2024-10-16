@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { avatarFooter } from "../assets/images.js";
-import '../styles/footer.css';
+import { avatarFooter } from "../../assets/images.js";
+import './Footer.css';
 
 const Footer = () => {
     return (
