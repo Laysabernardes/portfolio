@@ -1,5 +1,5 @@
 import React from 'react';
-import useIntersectionObserver from './useIntersectionObserver';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import './animated.css'; 
 
 const AnimatedSection = ({ children }) => {

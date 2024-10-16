@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { avatarFooter } from "../../assets/images.js";
+import { avatarFooter } from "../../../assets/images.js";
 import './Footer.css';
 
 const Footer = () => {
