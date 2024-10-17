@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { avatarFooter } from "../../../assets/images.js";
+import { avatarSaudacao } from "../../../assets/images.js";
 import './Footer.css';
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-img">
-                    <img src={avatarFooter} alt="Imagem de Laysa" />
+                    <img src={avatarSaudacao} alt="Imagem de Laysa" />
                 </div>
             </div>
 
