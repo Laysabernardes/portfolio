@@ -3,6 +3,12 @@
   --loader-fundo: #C7B0E1;
   --loader-carregamento: #7c4c86;
 
+  --welcome-fundo: #9d85bb;
+  --welcome-fonte: #f4f4f5;
+  --welcome-destaque-fonte: linear-gradient(120deg, #4805a0, #a213e4);
+  --welcome-button:#8947ec;
+  --welcome-button-hover: linear-gradient(90deg, #7f59b4, #9711d4);
+
   --fundo: #ddc0ff;
   --background-color: #C7B0E1;
   --nav-menu: #D9D9D9;
