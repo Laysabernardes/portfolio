@@ -23,10 +23,15 @@
   --botao-sol: #d8860b;
   --botao-lua: #C7B0E1;
 
+  --circulo1: #8d75b3;
+  --circulo2: #77448b;
+  --circulo3: #84598d;
+
   --presentation: #947BB2;
-  --detalhe: #a997be;
+  --detalhe: #7e57aa;
   --fonte-presentation: white;
   --destaque-fonte-presentation: linear-gradient(120deg, #1E0044, #B923FF);
+  --highlight-color: #5c1ab3;
 
   --tech: #684B93;
   --fonte-tech: white;
@@ -85,6 +90,7 @@
   --detalhe: #614b81;
   --fonte-presentation: white;
   --destaque-fonte-presentation: linear-gradient(120deg, #530bb1, #cf0fff);
+  --highlight-color: #8747e6;
 
   --tech: #763acf;
   --titulo-tech: #B07FF9;

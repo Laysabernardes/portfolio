@@ -61,12 +61,6 @@
     text-align: justify;
 }
 
-.highlight {
-    position: relative;
-    display: inline-block;
-    color: purple;
-    transition: color 0.3s ease;
-}
 
 @media screen and (max-width: 1024px) {
     .titulo-about {

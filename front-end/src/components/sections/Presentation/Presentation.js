@@ -1,14 +1,20 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import "./Presentation.css";
 import { fotoLight, fotoDark, linkedln, gmail, github } from "../../../assets/images.js";
 
-import AnimatedSection from '../../shared/AnimatedSection.jsx';
-
 function Presentation({ isDarkTheme }) {
 
+    useEffect(() => {
+        const highlights = document.querySelectorAll('.highlight'); 
+
+        highlights.forEach((span, index) => {
+            setTimeout(() => {
+                span.classList.add('highlighted'); 
+            }, index * 2000); 
+        });
+    }, []);
+
     return (
-        <AnimatedSection>
         <div className="container">
             <div className="browser-bar">
                 <div className="circle "></div>
@@ -24,9 +30,9 @@ function Presentation({ isDarkTheme }) {
                         <h1>Full-stack.</h1>
                     </div>
                     <p className="text-presentation">
-                        Estudante de Análise e Desenvolvimento de Sistemas no Instituto Federal de São Paulo. Criativa,
-                        organizada e com uma mente analítica, adoro transformar ideias em realidade. Estou pronta para mergulhar
-                        em novos desafios e contribuir em projetos que façam a diferença.
+                        Estudante de <span className="highlight">Análise e Desenvolvimento de Sistemas</span> no Instituto Federal de São Paulo.
+                        <span className="highlight">Criativa</span>, <span className="highlight">organizada</span> e com uma <span className="highlight">mente analítica</span>,
+                        adoro transformar <span className="highlight">ideias em realidade</span>. Estou pronta para mergulhar em novos desafios e contribuir em projetos <span className="highlight">que façam a diferença</span>.
                     </p>
                     <div className="links">
                         <ul>
@@ -63,7 +69,7 @@ function Presentation({ isDarkTheme }) {
                 </section>
             </div>
         </div>
-        </AnimatedSection>
+
     );
 }
 
