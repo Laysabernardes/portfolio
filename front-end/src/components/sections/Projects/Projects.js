@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import api from '../../../api';
 
 import AnimatedSection from '../../shared/AnimatedSection.jsx';
+import Loader from '../../shared/Loader/Loader.js';
 
 import "./Projects.css";
 
@@ -43,47 +44,52 @@ function Projects() {
     };
 
     return (
-        
+
         <div className="projects-wrapper">
             <h1 className="title-section-project">Projetos.</h1>
             {projects.length > 0 ? (
                 <div className="project-card">
                     <AnimatedSection>
-                    {/* Renderizando apenas o projeto atual com base na página */}
-                    <div className="project-container">
-                        <div className="info-projects">
-                            <p className="categoria-project">{projects[currentPage - 1].category}</p>
-                            <h2 className="title-project">{projects[currentPage - 1].title}</h2>
-                            <p className="tech-project">
-                                {Array.isArray(projects[currentPage - 1].technologies) && projects[currentPage - 1].technologies.length > 0
-                                    ? projects[currentPage - 1].technologies.map(tech => (
-                                        <span className="tech-item-project" key={tech._id}>
-                                            {tech.name}
-                                        </span>
-                                    ))
-                                    : "Tecnologia não disponível"}
-                            </p>
-                            <div>
-                                <p className="descricao-projects">{projects[currentPage - 1].description}</p>
-                                <div className="links-project">
-                                    <button>
-                                        <a href={projects[currentPage - 1].demoURL} target="_blank" rel="noopener noreferrer">Ver Projeto</a>
-                                    </button>
-                                    <button>
-                                        <a href={projects[currentPage - 1].repositoryURL} target="_blank" rel="noopener noreferrer">Ver Código</a>
-                                    </button>
+                        {/* Renderizando apenas o projeto atual com base na página */}
+                        <div className="project-container">
+                            <div className="info-projects">
+                                <p className="categoria-project">{projects[currentPage - 1].category}</p>
+                                <h2 className="title-project">{projects[currentPage - 1].title}</h2>
+                                <p className="tech-project">
+                                    {Array.isArray(projects[currentPage - 1].technologies) && projects[currentPage - 1].technologies.length > 0
+                                        ? projects[currentPage - 1].technologies.map(tech => (
+                                            <span className="tech-item-project" key={tech._id}>
+                                                {tech.name}
+                                            </span>
+                                        ))
+                                        : "Tecnologia não disponível"}
+                                </p>
+                                <div>
+                                    <p className="descricao-projects">{projects[currentPage - 1].description}</p>
+                                    <div className="links-project">
+                                        <button>
+                                            <a href={projects[currentPage - 1].demoURL} target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+                                        </button>
+                                        <button>
+                                            <a href={projects[currentPage - 1].repositoryURL} target="_blank" rel="noopener noreferrer">Ver Código</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
+                            <div className="image-container-project">
+                                <img src={projects[currentPage - 1].image} alt={projects[currentPage - 1].title} />
+                            </div>
                         </div>
-                        <div className="image-container-project">
-                            <img src={projects[currentPage - 1].image} alt={projects[currentPage - 1].title} />
-                        </div>
-                    </div>
                     </AnimatedSection>
                 </div>
-                 
+
             ) : (
-                <p>Carregando projetos...</p>
+               <div className="container-carregando">
+                   <p className="texto-tech">Carregando!</p>
+                   <div  className="centralizar-spinner">
+                       <div className="spinner"></div>
+                   </div>
+               </div>
             )}
 
             {/* Controles de paginação */}

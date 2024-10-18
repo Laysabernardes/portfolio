@@ -4,6 +4,7 @@ import api from '../../../api.js';
 import "./Technologies.css";
 
 import AnimatedSection from '../../shared/AnimatedSection.jsx';
+import Loader from '../../shared/Loader/Loader.js';
 
 function Technologies({ isDarkTheme }) {
     const [tecnologia, setTecnologia] = useState([]);
@@ -30,7 +31,7 @@ function Technologies({ isDarkTheme }) {
             }
         };
         fetchTechnologies(); //chama a função sempre que a categoria mudar
-    }, [categoria]); 
+    }, [categoria]);
 
     const handleCategoriaClick = (novaCategoria) => {
         setCategoria(novaCategoria);
@@ -43,50 +44,55 @@ function Technologies({ isDarkTheme }) {
 
     return (
         <AnimatedSection>
-        <div className="container-tech">
-            <div className="browser-bar-tech">
-                <div className="circle-tech "></div>
-                <div className="circle-tech "></div>
-                <div className="circle-tech "></div>
-            </div>
-            <div className="separator-line-tech"></div>
+            <div className="container-tech">
+                <div className="browser-bar-tech">
+                    <div className="circle-tech "></div>
+                    <div className="circle-tech "></div>
+                    <div className="circle-tech "></div>
+                </div>
+                <div className="separator-line-tech"></div>
 
-            <h1 className="titulo-section-tech">Hard Skills</h1>
+                <h1 className="titulo-section-tech">Hard Skills</h1>
 
-            <div className="group-button">
-                {categoria && (
-                    <button className="btn-reset" onClick={handleResetClick}>Voltar</button>
-                )}
-                <button className="button-tech btn-outro" onClick={() => handleCategoriaClick('outros')}>Outros</button>
-                <button className="button-tech btn-back" onClick={() => handleCategoriaClick('back-end')}>Back-end</button>
-                <button className="button-tech btn-front" onClick={() => handleCategoriaClick('front-end')}>Front-end</button>
-            </div>
+                <div className="group-button">
+                    {categoria && (
+                        <button className="btn-reset" onClick={handleResetClick}>Voltar</button>
+                    )}
+                    <button className="button-tech btn-outro" onClick={() => handleCategoriaClick('outros')}>Outros</button>
+                    <button className="button-tech btn-back" onClick={() => handleCategoriaClick('back-end')}>Back-end</button>
+                    <button className="button-tech btn-front" onClick={() => handleCategoriaClick('front-end')}>Front-end</button>
+                </div>
 
-            <div className="container-icon">
-                {!categoria && (
-                    <div>
-                        <p className="texto-tech">
-                            Essas são as linguagens, bibliotecas, frameworks e ferramentas com as quais tenho experiência,
-                            juntamente com meu nível de proficiência em cada uma delas. Clique em uma categoria para
-                            ver mais detalhes.
-                        </p>
-                        <h2>Tech.</h2>
-                    </div>
-                )}
-                {categoria && tecnologia.length === 0 && (
-                    <p className="texto-tech">Ops! No momento, ainda estou estudando, mas em breve terei mais Hard Skills para compartilhar aqui!</p>
-                )}
-                {categoria && tecnologia.length > 0 && (
-                    tecnologia.map((tech) => (
-                        <div className="tech-item" key={tech._id}>
-                            <p className="tech-name">{tech.name}</p>
-                            <img className="tech-img" src={tech.icon} alt={tech.name} />
-                            <p className="tech-nivel">{tech.nivel}</p>
+                <div className="container-icon">
+                    {!categoria && (
+                        <div>
+                            <p className="texto-tech">
+                                Essas são as linguagens, bibliotecas, frameworks e ferramentas com as quais tenho experiência,
+                                juntamente com meu nível de proficiência em cada uma delas. Clique em uma categoria para
+                                ver mais detalhes.
+                            </p>
+                            <h2>Tech.</h2>
                         </div>
-                    ))
-                )}
+                    )}
+                    {categoria && tecnologia.length === 0 && (
+                        <div className="container-carregando">
+                            <p className="texto-tech">Carregando!</p>
+                            <div  className="centralizar-spinner">
+                                <div className="spinner"></div>
+                            </div>
+                        </div>
+                    )}
+                    {categoria && tecnologia.length > 0 && (
+                        tecnologia.map((tech) => (
+                            <div className="tech-item" key={tech._id}>
+                                <p className="tech-name">{tech.name}</p>
+                                <img className="tech-img" src={tech.icon} alt={tech.name} />
+                                <p className="tech-nivel">{tech.nivel}</p>
+                            </div>
+                        ))
+                    )}
+                </div>
             </div>
-        </div>
         </AnimatedSection>
     )
 }
