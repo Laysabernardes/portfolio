@@ -4,7 +4,7 @@ import "./styles/index.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
