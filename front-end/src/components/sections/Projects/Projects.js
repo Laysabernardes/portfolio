@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import api from '../../../api';
 
+import AnimatedSection from '../../shared/AnimatedSection.jsx';
+
 import "./Projects.css";
 
 function Projects() {
@@ -41,10 +43,12 @@ function Projects() {
     };
 
     return (
+        
         <div className="projects-wrapper">
             <h1 className="title-section-project">Projetos.</h1>
             {projects.length > 0 ? (
                 <div className="project-card">
+                    <AnimatedSection>
                     {/* Renderizando apenas o projeto atual com base na página */}
                     <div className="project-container">
                         <div className="info-projects">
@@ -75,7 +79,9 @@ function Projects() {
                             <img src={projects[currentPage - 1].image} alt={projects[currentPage - 1].title} />
                         </div>
                     </div>
+                    </AnimatedSection>
                 </div>
+                 
             ) : (
                 <p>Carregando projetos...</p>
             )}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import {logoLight, logoDark } from "../../../assets/images.js";
+import { logoLight, logoDark } from "../../../assets/images.js";
 import "./Header.css";
 
 import ThemeToggleButton from "../../shared/ThemeToggleButton.js";
@@ -28,15 +28,22 @@ function Navbar({ onThemeChange }) {
         setIsDarkTheme(isDark);
     };
 
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a seção
+        }
+    };
+
     return (
         <nav className="nav">
             <div className="header_container">
-               {/* Troca dinâmica da logo com base no estado do tema */}
+                {/* Troca dinâmica da logo com base no estado do tema */}
                 <a href="https://www.linkedin.com/in/laysabernardes/">
-                    <img 
-                        className="header_logo" 
+                    <img
+                        className="header_logo"
                         src={isDarkTheme ? logoDark : logoLight} // Troca de logo com base no tema
-                        alt="Logo escrito LB de letra cursiva" 
+                        alt="Logo escrito LB de letra cursiva"
                     />
                 </a>
                 <p className="header_titulo">Laysa.</p>
@@ -45,27 +52,27 @@ function Navbar({ onThemeChange }) {
             <div className="nav_lista">
                 <ul className={active}>
                     <li>
-                        <a className="nav_link" onClick={(e) => {
-                            navigate("/main");
-                        }}>Home</a>
+                        <a onClick={() => scrollToSection('presentation')} className="nav_link">
+                            Home
+                        </a>
                     </li>
 
                     <li>
-                        <a className="nav_link" onClick={(e) => {
-                            navigate("/sobre");
-                        }}>Sobre</a>
+                        <a onClick={() =>  scrollToSection('technologies')} className="nav_link">
+                            Tech
+                        </a>
                     </li>
 
                     <li>
-                        <a className="nav_link" onClick={(e) => {
-                            navigate("/projeto");
-                        }}>Projetos</a>
+                        <a onClick={() => scrollToSection('projects')} className="nav_link">
+                            Projetos
+                        </a>
                     </li>
 
                     <li>
-                        <a className="nav_link" onClick={(e) => {
-                            navigate("/contato")
-                        }}>Contato</a>
+                        <a onClick={() => scrollToSection('contact')} className="nav_link">
+                            Contato
+                        </a>
                     </li>
 
                     {/* Passar a função para o ThemeToggleButton para monitorar a troca de tema */}

@@ -12,27 +12,22 @@
     position: relative;
 }
 
-/* Barra de navegação simulada */
 .browser-bar-tech {
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display: flex;
     justify-content: flex-end;
-    /* Círculos alinhados à direita */
     align-items: center;
 }
 
-/* Linha de separação */
 .separator-line-tech {
     width: calc(100% + 40px);
-    /* Compensa o padding do container */
     height: 2px;
     background-color: var(--tech);
     margin: 20px -20px;
 }
 
-/* Círculos */
 .circle-tech {
     width: 12px;
     height: 12px;
@@ -160,7 +155,6 @@
     border-radius: 15px;
 }
 
-/* Media Queries */
 @media screen and (max-width: 1024px) {
     .container-tech {
         width: 80%;
@@ -196,7 +190,6 @@
 @media screen and (max-width: 600px) {
     .button-tech {
         width: 100%;
-        /* Botões ocupando toda a largura */
     }
 
     .container-icon {
@@ -228,7 +221,6 @@
 
     .button-tech {
         padding: 8px 10px;
-        /* Ajuste para telas pequenas */
     }
 
     .texto-tech{

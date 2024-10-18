@@ -65,6 +65,7 @@
   --wrapper-project-fonte: rgb(52, 12, 90);
 
   --footer-fundo: #b58dbe;
+  --footer-fonte: black;
   --footer-hr: #7c4c86;
 }
 
@@ -83,8 +84,8 @@
 
   --cor-fonte: #C7B0E1;
 
-  --botao-cor1: #874CDD;
-  --botao-cor2: #1E0044;
+  --botao-cor1: #3d0a71;
+  --botao-cor2: #b17ef7;
 
   --presentation: #2E0E5B;
   --detalhe: #614b81;
@@ -122,7 +123,8 @@
   --wrapper-project-fonte: rgba(215, 197, 231, 0.932);
 
   --footer-fundo: #705199;
-  --footer-hr: rgb(83, 12, 97);
+  --footer-fonte: white;
+  --footer-hr: rgb(134, 98, 141);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');

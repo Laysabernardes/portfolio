@@ -1,10 +1,10 @@
 .footer {
-    background-color: var(--footer-fundo);
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--footer-fonte);
 }
 
 .footer-content {
@@ -20,8 +20,17 @@
 .footer-contato {
     flex: 0 0 30%;
     margin: 3% 5% 0% 0%;
-    /* Aumente o valor lateral conforme necessário */
-    text-align: center;
+}
+
+.footer-contato ul {
+    display: flex; 
+    justify-content: left; 
+    padding: 0; 
+    list-style: none; 
+}
+
+.footer-contato li {
+    margin: 0 10px 0 0; 
 }
 
 .footer-img {
@@ -60,12 +69,6 @@ hr {
     text-align: start;
 }
 
-.footer-contato li {
-    font-size: 1rem;
-    margin-top: 1%;
-    text-align: start;
-}
-
 .footer-img img {
     max-width: 80%;
     height: auto;
@@ -93,7 +96,6 @@ hr {
     }
 }
 
-/* Dispositivos até 768px (tablets) */
 @media screen and (max-width: 768px) {
     .footer-content {
         width: 80%;
@@ -113,7 +115,6 @@ hr {
     }
 }
 
-/* Dispositivos até 600px (smartphones maiores) */
 @media screen and (max-width: 600px) {
 
     .footer-nome,
@@ -148,7 +149,6 @@ hr {
     }
 }
 
-/* Dispositivos até 480px (smartphones menores) */
 @media screen and (max-width: 480px) {
     .footer-content {
         width: 90%;
