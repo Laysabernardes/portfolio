@@ -28,7 +28,11 @@ const Footer = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="laysabernardes.ads@gmail.com">
+                            <a
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=laysabernardes.ads@gmail.com&su=Contato%20via%20Portfólio&body=Olá%20Laysa!"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <img src="https://skillicons.dev/icons?i=gmail&theme=light" alt="Gmail" />
                             </a>
                         </li>
