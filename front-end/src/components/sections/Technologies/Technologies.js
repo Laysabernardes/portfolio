@@ -9,6 +9,8 @@ import Loader from '../../shared/Loader/Loader.js';
 function Technologies({ isDarkTheme }) {
     const [tecnologia, setTecnologia] = useState([]);
     const [categoria, setCategoria] = useState('');
+    const [containerColor, setContainerColor] = useState("var(--container-icon)");
+    var cores = "--container-icon";
 
     useEffect(() => {
         const fetchTechnologies = async () => {
@@ -33,13 +35,15 @@ function Technologies({ isDarkTheme }) {
         fetchTechnologies(); //chama a função sempre que a categoria mudar
     }, [categoria]);
 
-    const handleCategoriaClick = (novaCategoria) => {
+    const handleCategoriaClick = (novaCategoria, cor) => {
         setCategoria(novaCategoria);
+        setContainerColor(`var(${cor})`);
     };
 
     const handleResetClick = () => {
         setCategoria(''); // Reseta a categoria para voltar ao texto principal
         setTecnologia([]); // Limpa as tecnologias, se necessário
+        setContainerColor(`var(${cores})`);
     };
 
     return (
@@ -58,12 +62,12 @@ function Technologies({ isDarkTheme }) {
                     {categoria && (
                         <button className="btn-reset" onClick={handleResetClick}>Voltar</button>
                     )}
-                    <button className="button-tech btn-outro" onClick={() => handleCategoriaClick('outros')}>Outros</button>
-                    <button className="button-tech btn-back" onClick={() => handleCategoriaClick('back-end')}>Back-end</button>
-                    <button className="button-tech btn-front" onClick={() => handleCategoriaClick('front-end')}>Front-end</button>
+                    <button className="button-tech btn-outro" onClick={() => handleCategoriaClick('outros', "--btn-outro")}>Outros</button>
+                    <button className="button-tech btn-back" onClick={() => handleCategoriaClick('back-end', "--btn-back")}>Back-end</button>
+                    <button className="button-tech btn-front" onClick={() => handleCategoriaClick('front-end', "--btn-front")}>Front-end</button>
                 </div>
 
-                <div className="container-icon">
+                <div className="container-icon"  style={{ background: containerColor }}>
                     {!categoria && (
                         <div>
                             <p className="texto-tech">

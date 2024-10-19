@@ -70,7 +70,7 @@
     background-color: var(--btn-back);
 }
 
-.btn-front {
+.btn-front{
     background-color: var(--btn-front);
 }
 
@@ -95,11 +95,14 @@
     justify-content: center;
     gap: 15px;
     max-width: 1000px;
-    background: var(--container-icon);
+
     padding: 30px;
     border-radius: 30px 0px 0px 0px;
     color: var(--fonte-tech);
     margin: 0px;
+}
+.container-icon.front-end {
+    background-color: var(--btn-front);
 }
 
 .texto-tech {
@@ -117,7 +120,7 @@
     font-size: 5rem;
     font-weight: lighter;
     color: transparent;
-    -webkit-text-stroke: 0.5px var(--h2-tech);
+    -webkit-text-stroke: 1.5px var(--h2-tech);
 }
 
 .tech-item {
