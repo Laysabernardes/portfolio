@@ -42,6 +42,7 @@ body {
 }
 
 .nav_link {
+    cursor: pointer; 
     margin: 0.2vh;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
