@@ -21,6 +21,16 @@
   z-index: 9999;
 }
 
+.container-carregando-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px; /* Define uma altura mínima para o container */
+  width: 100%; /* Garante que o container ocupe toda a largura */
+}
+
+
 .centralizar-spinner {
   display: flex;
   justify-content: center;
