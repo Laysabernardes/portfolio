@@ -9,6 +9,6 @@ import linkedln from "./linkedln.svg";
 import github from "./github.svg";
 import AvatarAbout from "./avatar-about.png"
 import avatarSaudacao from "./saudacao.png";
-import Curriculo from "./curriculo-v2.pdf";
+import Curriculo from "./curriculo-v6.pdf";
 
 export{logoLight, logoDark, sun, moon, fotoLight, fotoDark, gmail, linkedln, github, AvatarAbout, avatarSaudacao, Curriculo};
