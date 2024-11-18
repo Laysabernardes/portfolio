@@ -1,11 +1,11 @@
-# Meu Portfólio - EM DESENVOLVIMENTO.
+# Meu Portfólio 
 
 Bem-vindo ao repositório do meu portfólio! Este projeto demonstra minhas habilidades em desenvolvimento web, abrangendo tanto o front-end quanto o back-end. Abaixo, você encontrará informações sobre a configuração, funcionalidades e instruções para rodar o projeto.
 
 ## 📚 Visão Geral
 O portfólio é composto por duas partes principais:
 - **Back-End**: Desenvolvido com Node.js, Express e MongoDB.
-- **Front-End**: (Em desenvolvimento).
+- **Front-End**: Desenvolvido com React e Framer Motion
 
 ### 🔍 Funcionalidades
 #### Back-End
@@ -33,8 +33,10 @@ O portfólio é composto por duas partes principais:
 - **Front-End**:
   - **React**: Biblioteca JavaScript para construção da interface de usuário.
   - **Figma**: Ferramenta para design e prototipagem.
-  Até o momento
-
+  - **React Router**: Gerenciamento de rotas no React.
+  - **Axios**: Biblioteca para fazer requisições HTTP ao back-end.
+  - **Styled-Components**: Para aplicar estilos CSS nos componentes.
+  - **Framer Motion**: Animações no React.
 
 ## 📄 Documentação da API
 A documentação da API está disponível no Swagger. Acesse o link para testar e explorar as rotas: [Documentação Swagger](https://portfolio-37lf.onrender.com/doc/).
@@ -45,4 +47,4 @@ Contribuições são bem-vindas! Se você tiver sugestões, melhorias ou correç
 ## 📬 Contato
 Para mais informações, entre em contato pelo e-mail: laysabernardes.ads@gmail.com
 
-Obrigado por visitar o meu portfólio! 🚀
+Obrigado por visitar meu portfólio! Estou sempre em busca de melhorias e adoraria ouvir sua opinião. 😊
