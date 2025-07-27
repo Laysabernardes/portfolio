@@ -1,50 +1,108 @@
-# Meu Portfólio 
+# Meu Portfólio Full-Stack
 
-Bem-vindo ao repositório do meu portfólio! Este projeto demonstra minhas habilidades em desenvolvimento web, abrangendo tanto o front-end quanto o back-end. Abaixo, você encontrará informações sobre a configuração, funcionalidades e instruções para rodar o projeto.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-## 📚 Visão Geral
-O portfólio é composto por duas partes principais:
-- **Back-End**: Desenvolvido com Node.js, Express e MongoDB.
-- **Front-End**: Desenvolvido com React e Framer Motion
+Este repositório contém o código-fonte do meu portfólio pessoal, uma aplicação full-stack desenvolvida para demonstrar minhas habilidades em desenvolvimento web.
 
-### 🔍 Funcionalidades
+---
+
+### 🚀 **Acesse a versão online:** [portfolio.laysabernardes.com](https://laysabernardes.github.io/portfolio/)
+
+![Demonstração do Portfólio](front-end/src/assets/site.gif)
+
+---
+
+## 📚 Sobre o Projeto
+
+Este portfólio foi criado não apenas para exibir meus projetos, mas também para ser uma aplicação dinâmica e gerenciável. A principal característica é a sua capacidade de ser totalmente atualizado através de um painel de administração, sem a necessidade de alterar uma única linha de código do front-end.
+
+O projeto é dividido em duas partes:
+- **Back-End**: Uma API RESTful construída com Node.js, Express e MongoDB, responsável por toda a lógica de negócio, autenticação e gerenciamento de dados.
+- **Front-End**: Uma interface moderna e interativa desenvolvida com React, que consome a API para exibir o conteúdo dinamicamente.
+
+## ✨ Funcionalidades Principais
+
 #### Back-End
-- **Gerenciamento de Usuários**: Criação, autenticação e segurança.
-- **CRUD de Projetos**: Adicionar, editar, visualizar e deletar projetos diretamente pelo painel.
-- **CRUD de Tecnologias**: Gerenciar as tecnologias associadas aos projetos.
-- **Gerenciamento de Seções**: Atualização das seções do portfólio sem necessidade de modificar o código.
+- ✅ **Autenticação Segura**: Sistema de login com JWT para proteger as rotas de administração.
+- ✅ **CRUD de Projetos**: Adicionar, editar, visualizar e deletar projetos.
+- ✅ **CRUD de Tecnologias**: Gerenciar as tecnologias vinculadas a cada projeto.
+- ✅ **Gerenciamento de Conteúdo**: Atualizar seções do portfólio (como "Sobre Mim" e "Contato") diretamente pelo painel.
+- ✅ **Documentação Automatizada**: API documentada com Swagger para facilitar testes e integração.
 
 #### Front-End
-- **Interface Dinâmica**: Exibe projetos, tecnologias e seções do portfólio.
-- **Autenticação de Usuários**: Login e gerenciamento de sessão.
-- **Interação com API**: Consome a API RESTful do back-end para atualizar e visualizar o conteúdo.
+- ✅ **Interface Dinâmica**: Exibe projetos, tecnologias e seções do portfólio com dados vindos da API.
+- ✅ **Painel de Administração**: Interface para gerenciar todo o conteúdo do site após o login.
+- ✅ **Design Responsivo**: Layout adaptável para uma ótima experiência em desktops e dispositivos móveis.
+- ✅ **Animações Sutis**: Uso de Framer Motion para uma experiência de usuário mais fluida.
 
 ## 🛠️ Tecnologias Utilizadas
-- **Back-End**:
-  - **Node.js**: Ambiente de execução JavaScript.
-  - **Express**: Framework para construção de APIs com Node.js.
-  - **MongoDB**: Banco de dados NoSQL.
-  - **Mongoose**: Biblioteca ODM para MongoDB e Node.js.
-  - **JWT**: Para autenticação e segurança.
-  - **Bcrypt**: Para criptografia de senhas.
-  - **Dotenv**: Para gerenciamento de variáveis de ambiente.
-  - **Swagger**: Para documentação e testes da API.
 
-- **Front-End**:
-  - **React**: Biblioteca JavaScript para construção da interface de usuário.
-  - **Figma**: Ferramenta para design e prototipagem.
-  - **React Router**: Gerenciamento de rotas no React.
-  - **Axios**: Biblioteca para fazer requisições HTTP ao back-end.
-  - **Styled-Components**: Para aplicar estilos CSS nos componentes.
-  - **Framer Motion**: Animações no React.
+| Categoria | Tecnologia |
+|-----------|-----------------------------------------------------------------|
+| **Front-End** | `React`, `React Router`, `Axios`, `Styled-Components`, `Framer Motion` |
+| **Back-End** | `Node.js`, `Express`, `MongoDB`, `Mongoose`, `JWT`, `Bcrypt` |
+| **Ferramentas** | `Git`, `Dotenv`, `Swagger`, `Figma` |
 
-## 📄 Documentação da API
-A documentação da API está disponível no Swagger. Acesse o link para testar e explorar as rotas: [Documentação Swagger](https://portfolio-37lf.onrender.com/doc/).
+## ⚙️ Como Rodar o Projeto Localmente
+
+Siga os passos abaixo para configurar e executar o projeto em sua máquina.
+
+### Pré-requisitos
+- [Node.js](https://nodejs.org/en/) (versão 18 ou superior)
+- [Git](https://git-scm.com/)
+- Uma instância do MongoDB (local ou em um serviço como o [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+
+### Passos
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+    cd seu-repositorio
+    ```
+
+2.  **Configure o Back-End:**
+    ```bash
+    cd back-end
+    npm install
+    ```
+    - Crie um arquivo `.env` na raiz da pasta `back-end` e adicione as seguintes variáveis, baseando-se no arquivo `.env.example` (se houver):
+      ```
+      MONGO_URI=sua_string_de_conexao_com_o_mongodb
+      JWT_SECRET=seu_segredo_jwt_super_secreto
+      PORT=3001
+      ```
+    - Inicie o servidor back-end:
+    ```bash
+    npm run dev
+    ```
+
+3.  **Configure o Front-End:**
+    - Em um novo terminal:
+    ```bash
+    cd front-end
+    npm install
+    ```
+    - Inicie a aplicação React:
+    ```bash
+    npm start
+    ```
+    A aplicação estará disponível em `http://localhost:3000`.
+
+## 📄 Links e Documentação
+
+- **API (Swagger):** [Documentação da API](https://portfolio-37lf.onrender.com/doc/)
+- **Design (Figma):** [Protótipo no Figma](https://www.figma.com/design/eZSWl1162WYf4Eoc2PHlMU/Portfolio?node-id=0-1&t=hE4Zgy1SOqmNGKnm-1)
 
 ## 🌟 Contribuições
-Contribuições são bem-vindas! Se você tiver sugestões, melhorias ou correções, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
 
-## 📬 Contato
-Para mais informações, entre em contato pelo e-mail: laysabernardes.ads@gmail.com
+Contribuições são sempre bem-vindas! Se você encontrar um bug ou tiver uma sugestão de melhoria, sinta-se à vontade para abrir uma **issue** ou enviar um **pull request**.
 
-Obrigado por visitar meu portfólio! Estou sempre em busca de melhorias e adoraria ouvir sua opinião. 😊
+## 📫 Contato
+
+- **Email:** laysabernardes.ads@gmail.com
+- **LinkedIn:** [Laysa Bernardes](https://www.linkedin.com/in/laysabernardes/)
+
+Obrigado por visitar! 😊
